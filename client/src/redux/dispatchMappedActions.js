@@ -1,6 +1,8 @@
 import { bindActionCreators } from 'redux';
 import actions from './actions';
 
-export const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch)
 });
+
+export default mapDispatchToProps;
