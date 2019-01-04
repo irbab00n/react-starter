@@ -1,0 +1,13 @@
+.navbar-wrapper {
+  @include flex;
+  height: 36px; width: 100%;
+  padding: 12px 0;
+  background-color: $cyan-600;
+}
+
+.navbar-inner-wrapper {
+  @include flex; @include align-center; @include justify-between;
+  @include box-size-border-box;
+  height: 100%; width: 100%;
+  padding: 0 16px;
+}

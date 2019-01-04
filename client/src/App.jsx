@@ -3,6 +3,7 @@ import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from 'react-router-dom';
 
 import Home from './views/Home.jsx';
+import Navbar from './components/Navbar';
 
 import '../sass/main.scss';
 
@@ -18,11 +19,14 @@ export default class App extends React.Component {
     // console.log(this.props);
 
     return (
-      <Router history={hist}>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-        </Switch>
-      </Router>
+      <div>
+        <Navbar />
+        <Router history={hist}>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+          </Switch>
+        </Router>
+      </div>
     );
   }
 };
