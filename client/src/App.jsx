@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 
 import '../sass/main.scss';
 
+/* Make application history available as an export */
 export const hist = createBrowserHistory();
 
 export default class App extends React.Component {

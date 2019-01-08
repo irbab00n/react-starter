@@ -5,9 +5,15 @@
 /* BASE SASS FILES */
 @import "base/body";
 @import "base/html";
+@import "base/shared";
 
 /* COMPONENTS SASS FILES */
+@import "components/jumbotron";
 @import "components/navbar";
+@import "components/skill-carousel";
+
+/* LAYOUTS SASS FILES */
+@import "layouts/main-page-layout";
 
 /* VIEWS SASS FILES */
 @import "views/home";

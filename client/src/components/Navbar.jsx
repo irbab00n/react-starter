@@ -9,7 +9,7 @@ class Navbar extends React.Component {
 
     return (
 
-      <header className="navbar-wrapper">
+      <header className="navbar-wrapper cosbytes-background">
         <div className="navbar-inner-wrapper">
           <div className="logo">Logo</div>
           <div className="links">Links</div>

@@ -1,0 +1,101 @@
+$skill-carousel-height: 400px;
+
+#skill-carousel {
+  @include flex;
+  width: 100%;
+}
+
+.skill-carousel-wrapper {
+  @include flex; @include flex-column;
+  overflow: hidden;
+  height: $skill-carousel-height; width: 100%;
+}
+
+.skill-carousel-container {
+  @include flex;
+  @include transition(0.2s);
+  @include box-size-border-box;
+  height: $skill-carousel-height; width: 100%;
+}
+
+.skill-card {
+  @include flex;
+  @include flex-column;
+  @include align-center;
+  @include transition(0.4s);
+  color: white;
+  background-color: rgba(193, 210, 220, 0.6);
+  justify-content: space-evenly;
+  min-width: calc(100% / 3);
+  height: $skill-carousel-height;
+
+  &:hover {
+    background-color: rgba(193, 210, 220, 0.8);
+
+    .skill-card-image {
+      height: 110px;
+    }
+
+  }
+}
+
+.skill-card-title {
+  margin: 0;
+}
+
+.skill-card-image {
+  @include transition(0.2s);
+  height: 100px;
+  margin: 2% 0;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(50, 50, 50, 0.8));
+  filter: drop-shadow(5px 5px 5px rgba(50, 50, 50, 0.8));
+}
+
+.skill-card-description {
+  @include flex;
+  @include flex-column;
+  @include align-center;
+}
+
+/* 
+
+  Skill Carousel control box styles
+
+*/
+
+.skill-control-box {
+  @include flex;
+  justify-content: space-between;
+  pointer-events: none;
+  transform: translate(0, -100%);
+}
+
+.control {
+  @include flex;
+  @include align-center;
+  @include justify-center;
+  @include transition(0.2s);
+  cursor: pointer;
+  color: rgba(205, 205, 205, 1.0);
+  font-size: 32px;
+  opacity: 0.2;
+  pointer-events: auto;
+  height: $skill-carousel-height; width: 100px;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1.0;
+  }
+
+  &:active {
+    font-size: 40px;
+  }
+}
+
+.control-right {
+  background: linear-gradient(to left, rgba(0, 122, 193, 1.0) 0%, rgba(75, 75, 75, 0.0) 100%);
+}
+
+.control-left {
+  background: linear-gradient(to right, rgba(0, 122, 193, 1.0) 0%, rgba(75, 75, 75, 0.0) 100%);
+}

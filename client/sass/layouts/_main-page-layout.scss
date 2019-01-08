@@ -1,0 +1,28 @@
+$main-page-layout-top-margin: ($navbar-height + ($navbar-padding-dimension * 2));
+
+/* Main Page layout wrapper */
+.main-page-layout {
+  @include flex; @include flex-column; @include justify-center;
+  @include box-size-border-box;
+  width: 100%;
+  margin: 0 auto;
+  
+  /* Main Page content container */
+  .container {
+    @include box-size-border-box;
+    width: 100%;
+
+    &.blue-grey-background {
+      background-color: $blue-grey-100;
+    }
+    
+    /* Container inner wrapper */
+    .inner-wrapper {
+      max-width: 980px; width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+  }
+
+}
