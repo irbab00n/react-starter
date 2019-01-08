@@ -7,6 +7,7 @@ $skill-carousel-height: 450px;
 
 .skill-carousel-wrapper {
   @include flex; @include flex-column;
+  // border-bottom: 1px solid rgba(150, 158, 174, 0.6);
   overflow: hidden;
   height: $skill-carousel-height; width: 100%;
 }
@@ -24,13 +25,12 @@ $skill-carousel-height: 450px;
   @include align-center;
   @include transition(0.4s);
   color: $blue-grey-900;
-  background-color: rgba(193, 210, 220, 0.6);
   justify-content: space-evenly;
   min-width: calc(100% / 3);
   height: $skill-carousel-height;
 
   &:hover {
-    background-color: rgba(193, 210, 220, 0.8);
+    background-color: $blue-grey-100;
 
     .skill-card-image {
       height: 110px;
@@ -77,15 +77,16 @@ $skill-carousel-height: 450px;
   @include justify-center;
   @include transition(0.2s);
   cursor: pointer;
-  color: rgba(205, 205, 205, 1.0);
+  color: $blue-grey-200;
   font-size: 32px;
-  opacity: 0.2;
+  opacity: 0.4;
   pointer-events: auto;
   height: $skill-carousel-height; width: 100px;
   z-index: 1;
 
   &:hover {
     opacity: 1.0;
+    color: $blue-grey-50;
   }
 
   &:active {
@@ -95,8 +96,14 @@ $skill-carousel-height: 450px;
 
 .control-right {
   background: linear-gradient(to left, rgba(0, 122, 193, 1.0) 0%, rgba(75, 75, 75, 0.0) 100%);
+  &:hover {
+    text-shadow: 3px 3px 4px rgba(50, 50, 50, 0.6);
+  }
 }
 
 .control-left {
   background: linear-gradient(to right, rgba(0, 122, 193, 1.0) 0%, rgba(75, 75, 75, 0.0) 100%);
+  &:hover {
+    text-shadow: 3px 3px 4px rgba(50, 50, 50, 0.6);
+  }
 }

@@ -99,8 +99,6 @@ export default class SkillCarousel extends React.Component {
 
   render() {
     const { index } = this.state;
-    
-    console.log(skills);
 
     return (
       

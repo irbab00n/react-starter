@@ -9,7 +9,6 @@ export default class Jumbotron extends React.Component {
 
     return (
       <div className="container jumbotron-wrapper">
-        Jumbotron
       </div>
     );
 

@@ -15,6 +15,10 @@ $main-page-layout-top-margin: ($navbar-height + ($navbar-padding-dimension * 2))
     &.blue-grey-background {
       background-color: $blue-grey-100;
     }
+
+    &.border-bottom {
+      border-bottom: 1px solid rgba(150, 158, 174, 0.6);
+    }
     
     /* Container inner wrapper */
     .inner-wrapper {

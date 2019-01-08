@@ -11,9 +11,8 @@ class Navbar extends React.Component {
 
       <header className="navbar-wrapper cosbytes-background">
         <div className="navbar-inner-wrapper">
-          <div className="logo">Logo</div>
+          <div className="logo">COSBYTES</div>
           <div className="links">Links</div>
-          <span />
         </div>
       </header>
 

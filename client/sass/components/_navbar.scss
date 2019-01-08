@@ -1,7 +1,6 @@
 $navbar-height: 60px;
 $navbar-padding-dimension: 12px;
-$navbar-padding: $navbar-padding-dimension 0;
-$navbar-inner-wrapper-padding: 16px;
+$navbar-inner-wrapper-padding: 40px;
 
 .navbar-wrapper {
   @include flex;
@@ -18,4 +17,8 @@ $navbar-inner-wrapper-padding: 16px;
   @include box-size-border-box;
   height: 100%; width: 100%;
   padding: 0 $navbar-inner-wrapper-padding;
+}
+
+.navbar-inner-wrapper > .logo {
+  font-size: 24px;
 }
