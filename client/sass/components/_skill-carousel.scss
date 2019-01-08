@@ -1,4 +1,4 @@
-$skill-carousel-height: 400px;
+$skill-carousel-height: 450px;
 
 #skill-carousel {
   @include flex;
@@ -23,7 +23,7 @@ $skill-carousel-height: 400px;
   @include flex-column;
   @include align-center;
   @include transition(0.4s);
-  color: white;
+  color: $blue-grey-900;
   background-color: rgba(193, 210, 220, 0.6);
   justify-content: space-evenly;
   min-width: calc(100% / 3);
@@ -47,14 +47,15 @@ $skill-carousel-height: 400px;
   @include transition(0.2s);
   height: 100px;
   margin: 2% 0;
-  -webkit-filter: drop-shadow(5px 5px 5px rgba(50, 50, 50, 0.8));
-  filter: drop-shadow(5px 5px 5px rgba(50, 50, 50, 0.8));
+  -webkit-filter: drop-shadow(4px 4px 4px rgba(50, 50, 50, 0.6));
+  filter: drop-shadow(4px 4px 4px rgba(50, 50, 50, 0.6));
 }
 
 .skill-card-description {
   @include flex;
   @include flex-column;
   @include align-center;
+  font-size: 16px;
 }
 
 /* 
