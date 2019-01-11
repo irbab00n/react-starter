@@ -8,7 +8,10 @@ export default class Jumbotron extends React.Component {
   render() {
 
     return (
-      <div className="container jumbotron-wrapper">
+      <div className="jumbotron-wrapper default-bg">
+        <div className="jumbotron-inner-wrapper">
+          Inner wrapper
+        </div>
       </div>
     );
 

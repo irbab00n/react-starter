@@ -1,11 +1,19 @@
 $navbar-height: 60px;
 $navbar-padding-dimension: 12px;
+$navbar-shadow-veritical: 5px;
+$navbar-shadow-blur: 10px;
+$navbar-shadow-color: rgba(25, 25, 25, 0.2);
+
 $navbar-inner-wrapper-padding: 40px;
 
 .navbar-wrapper {
   @include flex;
+  @include box-shadow(0px, $navbar-shadow-veritical, $navbar-shadow-blur, 0px, $navbar-shadow-color);
   height: $navbar-height; width: 100%;
   padding: $navbar-padding-dimension 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 
   &.cosbytes-background {
     background-color: $cosbytes-blue;

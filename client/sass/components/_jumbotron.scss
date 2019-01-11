@@ -1,6 +1,26 @@
 $jumbotron-height: 500px;
+$jumbotron-width: 100%;
 
 .jumbotron-wrapper {
-  height: $jumbotron-height;
-  background-color: $blue-grey-100;
+  @include box-size-border-box;
+  @include transition(0.2s);
+  height: $jumbotron-height; width: $jumbotron-width;
+
+  &.default-bg {
+    background-color: $blue-grey-500;
+  }
+  &.orange-bg {
+    background-color: #8b6e60;
+  }
+  &.gold-bg {
+    background-color: #8b8460;
+  }
+  &.purple-bg {
+    background-color: #7d608b;
+  }
+}
+
+.jumbotron-inner-wrapper {
+  margin: 0 auto;
+  height: $jumbotron-height; max-width: 980px; width: 100%;
 }
