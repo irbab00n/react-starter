@@ -1,26 +1,96 @@
 $jumbotron-height: 500px;
 $jumbotron-width: 100%;
 
+$jumbotron-shadow-veritical: 2.5px;
+$jumbotron-shadow-blur: 5px;
+$jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
+
 .jumbotron-wrapper {
   @include box-size-border-box;
   @include transition(0.2s);
+  @include box-shadow(0px, $jumbotron-shadow-veritical, $jumbotron-shadow-blur, 0px, $jumbotron-shadow-color);
   height: $jumbotron-height; width: $jumbotron-width;
 
   &.default-bg {
-    background-color: $blue-grey-500;
+    background-color: #6da3c5;
   }
-  &.orange-bg {
-    background-color: #8b6e60;
+  &.medium-bg {
+    background-color: #498cb6;
   }
-  &.gold-bg {
-    background-color: #8b8460;
+  &.darkest-bg {
+    background-color: #3a7092;
   }
   &.purple-bg {
-    background-color: #7d608b;
+    background-color: #686EBE;
   }
 }
 
 .jumbotron-inner-wrapper {
+  @include flex; @include flex-column;
+  @include transition(0.2s);
   margin: 0 auto;
   height: $jumbotron-height; max-width: 980px; width: 100%;
+}
+
+.jumbotron-inner-wrapper > .jumbotron-slide-wrapper {
+  @include flex; @include flex-column; @include align-center; @include justify-center;
+  height: 450px; width: 100%;
+}
+
+.jumbotron-slide-wrapper > h1 {
+  @include transition(0.2s);
+  color: rgba(0, 0, 0, 0.0);
+  font-size: 48px;
+
+  &.show {
+    // text-shadow: 1px 1px 4px rgba(25, 25, 25, 0.5);
+    color: $blue-grey-900;
+  }
+}
+
+.jumbotron-slide-wrapper > h2 {
+  @include transition(0.2s);
+  font-size: 40px;
+}
+
+.jumbotron-slide-wrapper > h3 {
+  @include transition(0.2s);
+  font-size: 32px;
+}
+
+.jumbotron-slide-wrapper > h4 {
+  @include transition(0.2s);
+  color: rgba(0, 0, 0, 0.0);
+  font-size: 24px;
+
+  &.show {
+    // text-shadow: 1px 1px 4px rgba(25, 25, 25, 0.5);
+    color: $blue-grey-900;
+  }
+}
+
+.jumbotron-inner-wrapper > .bottom-container {
+  @include flex; @include align-center; @include justify-center;
+  height: 50px; width: 100%;
+}
+
+.slide-selector-wrapper > ul {
+  @include flex; @include align-center;
+  list-style: none;
+  padding: 0;
+}
+.slide-selector-wrapper > ul > li {
+  @include transition(0.2s);
+  cursor: pointer;
+  background-color: $blue-grey-400;
+  border: 1px solid $blue-grey-300; border-radius: 50%;
+  height: 12px; width: 12px;
+  margin-right: 10px;
+
+  &:last-child { margin-right: 0px; }
+
+  &.selected { background-color: $blue-grey-800; }
+
+  &:hover { @include box-shadow(0px, 0px, 2px, 1px, rgba(25, 25, 25, 0.2)); background-color: $blue-grey-600; }
+  &:active { background-color: $blue-grey-700 }
 }

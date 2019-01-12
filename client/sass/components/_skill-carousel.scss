@@ -9,12 +9,14 @@ $skill-carousel-height: 450px;
   @include flex; @include flex-column;
   // border-bottom: 1px solid rgba(150, 158, 174, 0.6);
   overflow: hidden;
+  @include box-shadow(0px, $navbar-shadow-veritical, $navbar-shadow-blur, 0px, $navbar-shadow-color);
   height: $skill-carousel-height; width: 100%;
 }
 
 .skill-carousel-container {
   @include flex;
   @include transition(0.2s);
+  
   @include box-size-border-box;
   height: $skill-carousel-height; width: 100%;
 }
@@ -40,6 +42,7 @@ $skill-carousel-height: 450px;
 }
 
 .skill-card-title {
+  font-size: 24px;
   margin: 0;
 }
 

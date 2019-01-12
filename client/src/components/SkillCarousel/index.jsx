@@ -3,7 +3,6 @@ import React from 'react';
 import SkillCard from './SkillCard';
 import Control from './Control';
 
-import skills from '../lib/skills';
 
 export default class SkillCarousel extends React.Component {
   constructor(props) {
@@ -30,6 +29,7 @@ export default class SkillCarousel extends React.Component {
   }
 
   renderSkillsCarousel(index) {
+    const { skills } = this.props;
     // let { isMobile, isPortrait } = this.props;
 
     let contentHeight = 'half'; // default is half content height
@@ -69,6 +69,7 @@ export default class SkillCarousel extends React.Component {
   */
   updateCarouselIndex(e, update) {
     e.preventDefault();
+    const { skills } = this.props;
     let { index } = this.state;
     // let { isMobile, isPortrait } = this.props;
 

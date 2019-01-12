@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Jumbotron from '../components/Jumbotron';
-import SkillCarousel from '../components/SkillCarousel';
+import Jumbotron from '../components/Jumbotron/';
+import SkillCarousel from '../components/SkillCarousel/';
+
+import skills from '../lib/skills';
 
 const Home = (props) => (
   <div className="main-page-layout">
@@ -10,13 +12,17 @@ const Home = (props) => (
     <Jumbotron />
 
     {/* Skill Carousel */}
-    <SkillCarousel />
+    <SkillCarousel
+      skills={skills}
+    />
+
+    <Jumbotron />
     
-    <div className="container blue-grey-background">
+    {/* <div className="container blue-grey-background">
       <div className="inner-wrapper">
         Content
       </div>
-    </div>
+    </div> */}
 
 
   </div>
