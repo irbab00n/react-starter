@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from '../components/Footer/';
 import Jumbotron from '../components/Jumbotron/';
 import SkillCarousel from '../components/SkillCarousel/';
 
@@ -18,11 +19,7 @@ const Home = (props) => (
 
     <Jumbotron />
     
-    {/* <div className="container blue-grey-background">
-      <div className="inner-wrapper">
-        Content
-      </div>
-    </div> */}
+    <Footer />
 
 
   </div>
