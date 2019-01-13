@@ -1,10 +1,5 @@
 $skill-carousel-height: 450px;
 
-#skill-carousel {
-  @include flex;
-  width: 100%;
-}
-
 .skill-carousel-wrapper {
   @include flex; @include flex-column;
   // border-bottom: 1px solid rgba(150, 158, 174, 0.6);

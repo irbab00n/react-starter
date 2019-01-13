@@ -39,16 +39,17 @@ export default class JumbotronSlide extends React.Component {
 
   render() {
     const { showSubtitle, showTitle } = this.state;
-    const { subtitle, title } = this.props;
+    const { feature, subtitle, textWhite, title } = this.props.slide;
     
     return (
-      <div className="jumbotron-slide-wrapper">
+      <div className={`jumbotron-slide-wrapper ${textWhite ? 'text-white' : ''}`}>
         <h1 className={`${showTitle ? 'show' : ''}`}>
           {title}
         </h1>
         <h4 className={`${showSubtitle ? 'show' : ''}`}>
           {subtitle}
         </h4>
+        {feature(showTitle)}
       </div>
     );
   }

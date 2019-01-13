@@ -5,16 +5,28 @@ import SlideSelectorList from './SlideSelectorList';
 
 const slides = [
   {
+    feature: (show) => (
+      <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
+        <button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/github_logo.png"/></button>
+        <button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/linkedin_logo.png"/></button>
+        <button className="large-font">Resume</button>
+      </div>
+    ),
     subtitle: 'I like to build things',
-    title: 'My name is Thomas Cosby'
+    title: 'My name is Thomas Cosby',
+    textWhite: true
   },
   {
+    feature: () => (null),
     subtitle: 'See what I\'ve been working on',
-    title: 'My Projects'
+    title: 'My Projects',
+    textWhite: false
   },
   {
+    feature: () => (null),
     subtitle: 'See what\'s been on my mind',
-    title: 'My blog'
+    title: 'My blog',
+    textWhite: false
   }
 ];
 
@@ -35,8 +47,7 @@ export default class Jumbotron extends React.Component {
         <JumbotronSlide
           currentIndex={currentIndex}
           fadeOut={fadeOut}
-          subtitle={slide.subtitle}
-          title={slide.title}
+          slide={slide}
         />
       );
     });
@@ -54,7 +65,12 @@ export default class Jumbotron extends React.Component {
   }
 
   setCurrentIndex(index) {
-    console.log('setting the jumbotron index to: ', index);
+    const { currentIndex } = this.state;
+    if (index === currentIndex) {
+      return;
+    }
+
+    // console.log('setting the jumbotron index to: ', index);
     this.setState({
       fadeOut: true
     }, () => {
@@ -72,8 +88,6 @@ export default class Jumbotron extends React.Component {
   render() {
     const { currentIndex, fadeOut } = this.state;
     let formattedSlides = this.formatSlides(currentIndex, fadeOut);
-
-    console.log(formattedSlides);
 
     return (
       <div className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
