@@ -16,19 +16,10 @@ $footer-inner-wrapper-padding: 40px;
 }
 
 .footer-inner-wrapper {
-  @include flex; @include align-center; @include justify-between;
+  @include flex; @include align-center; @include justify-center;
   @include box-size-border-box;
+  color: white;
+  font-size: 14px;
   height: 100%; width: 100%;
   padding: 0 $footer-inner-wrapper-padding;
-}
-.footer-inner-wrapper > .logo {
-  @include transition(0.2s);
-  cursor: pointer;
-  color: $blue-grey-100;
-  font-size: 24px; font-weight: 500;
-
-  &:hover {
-    text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);
-    color: $blue-grey-50;
-  }
 }

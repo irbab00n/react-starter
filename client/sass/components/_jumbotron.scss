@@ -105,7 +105,11 @@ $jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
   width: 100%;
 }
 /* BUTTON ELEMENTS INSIDE OF SLIDE CONTAINER */
-.jumbotron-slide-container > button {
+.jumbotron-slide-container > a {
+  text-decoration: none;
+  margin-right: 40px;
+}
+.jumbotron-slide-container > a > button {
   @include flex; @include align-center; @include justify-center;
   @include transition(0.2s);
   @include box-shadow(2px, 2px, 6px, 2px, rgba(25, 25, 25, 0.4));
@@ -119,7 +123,7 @@ $jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
   margin-right: 40px;
 
   &.large-font {
-    font-size: 20px; font-weight: 600;
+    font-size: 24px; font-weight: 600;
   }
 
   &:hover {
