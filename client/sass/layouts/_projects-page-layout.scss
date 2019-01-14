@@ -14,6 +14,7 @@ $side-track-expanded-width: 400px;
     we need to create a gap to the left of the main track
   */
   @include box-size-border-box;
+  @include box-shadow(1px, 0px, 8px, 2px, rgba(25, 25, 25, 0.2));
   background-color: $blue-grey-50;
   position: fixed;
   overflow-y: scroll;
@@ -21,7 +22,6 @@ $side-track-expanded-width: 400px;
   width: $side-track-expanded-width;
 
   & > .inner-wrapper {
-    padding: 20px;
     width: 100%;
   }
 }
@@ -39,6 +39,10 @@ $side-track-expanded-width: 400px;
 
   & > .inner-wrapper {
     padding: 20px;
-    width: 100%;
+    margin: 0 auto;
+    min-width: 680px; max-width: 980px; width: 100%;
+
+    &.full-width { max-width: 100%; }
+    &.no-padding { padding: 0px !important; }
   }
 }

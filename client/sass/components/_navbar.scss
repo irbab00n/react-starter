@@ -26,11 +26,12 @@ $navbar-inner-wrapper-padding: 40px;
   height: 100%; width: 100%;
   padding: 0 $navbar-inner-wrapper-padding;
 }
-.navbar-inner-wrapper > .logo {
+.navbar-inner-wrapper > .logo, .navbar-inner-wrapper > .logo > a {
   @include transition(0.2s);
   cursor: pointer;
   color: $blue-grey-100;
   font-size: 24px; font-weight: 500;
+  text-decoration: none;
 
   &:hover {
     text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);

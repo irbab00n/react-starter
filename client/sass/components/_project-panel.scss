@@ -1,0 +1,36 @@
+$project-pictures-height: 500px;
+
+.project-title-wrapper {
+  @include flex; @include align-center; @include justify-between;
+
+  & > h1 {
+    font-size: 48px;
+    margin: 36px 20px;
+  }
+  & > h2 {
+    font-size: 40px;
+    margin: 32px 20px;
+  }
+  & > h3 {
+    font-size: 32px;
+    margin: 28px 20px;
+  }
+  & > h4 {
+    font-size: 24px;
+    margin: 24px 20px;
+  }
+}
+
+ul.project-tech-wrapper {
+  @include flex; @include align-center;
+  list-style: none;
+}
+ul.project-tech-wrapper > li {
+  @include flex;
+  margin-right: 20px;
+}
+
+.project-pictures-wrapper {
+  background-color: $blue-grey-300;
+  height: $project-pictures-height; width: 100%;
+}

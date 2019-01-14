@@ -1,0 +1,14 @@
+.projects-list-item {
+  @include jumbotron-background;
+  @include transition(0.2s);
+  cursor: pointer;
+  height: 360px;
+
+  &:hover {
+    background-color: white;
+  }
+
+  &.selected {
+    background-color: $amber-300;
+  }
+}
