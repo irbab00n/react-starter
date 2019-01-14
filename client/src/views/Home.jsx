@@ -7,7 +7,7 @@ import SkillCarousel from '../components/SkillCarousel/';
 import skills from '../lib/skills';
 
 const Home = (props) => (
-  <div className="main-page-layout">
+  <main className="main-page-layout">
 
     {/* Jumbotron */}
     <Jumbotron />
@@ -22,7 +22,7 @@ const Home = (props) => (
     <Footer />
 
 
-  </div>
+  </main>
 );
 
 export default Home;

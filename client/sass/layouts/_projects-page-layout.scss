@@ -1,0 +1,44 @@
+$side-track-collapsed-width: 0px;
+$side-track-expanded-width: 400px;
+
+.projects-page-layout {
+  @include flex;
+  @include box-size-border-box;
+  height: calc(100% - #{$navbar-height}); width: 100%;
+  margin: $navbar-height auto 0 auto;
+}
+
+.side-track {
+  /* 
+    Since this will be removed from the flow of the page,
+    we need to create a gap to the left of the main track
+  */
+  @include box-size-border-box;
+  background-color: $blue-grey-50;
+  position: fixed;
+  overflow-y: scroll;
+  height: calc(100vh - #{$navbar-height});
+  width: $side-track-expanded-width;
+
+  & > .inner-wrapper {
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+.main-track {
+  /* 
+    Since the sidebar is removed from the flow of the page,
+    we need to create a margin-based gap to compensate for the element size
+  */
+  background-color: $blue-grey-100;
+  margin-left: $side-track-expanded-width;
+  overflow-y: scroll;
+  height: calc(100vh - #{$navbar-height});
+  width: calc(100% - #{$side-track-expanded-width});
+
+  & > .inner-wrapper {
+    padding: 20px;
+    width: 100%;
+  }
+}

@@ -90,7 +90,7 @@ export default class Jumbotron extends React.Component {
     let formattedSlides = this.formatSlides(currentIndex, fadeOut);
 
     return (
-      <div className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
+      <section className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
         <div className="jumbotron-inner-wrapper">
           {
             formattedSlides[currentIndex]
@@ -101,7 +101,7 @@ export default class Jumbotron extends React.Component {
             slides={slides}
           />
         </div>
-      </div>
+      </section>
     );
 
   }
