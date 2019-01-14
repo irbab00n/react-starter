@@ -13,7 +13,10 @@ export default class Control extends React.Component {
 
     direction === 'right' ? update = 'inc' : null;
 
-    ReactDOM.findDOMNode(this).addEventListener(isMobile ? 'touchend': 'click', e => this.props.updateFunction(e, update), {passive: false});
+    ReactDOM.findDOMNode(this).addEventListener(
+      isMobile ?
+        'touchend' :
+        'click', e => updateFunction(e, update), {passive: false});
   }
 
   componentWillUnmount() {
@@ -22,7 +25,10 @@ export default class Control extends React.Component {
 
     direction === 'right' ? update = 'inc' : null;
 
-    ReactDOM.findDOMNode(this).removeEventListener(isMobile ? 'touchend': 'click', e => this.props.updateFunction(e, update), {passive: false});
+    ReactDOM.findDOMNode(this).removeEventListener(
+      isMobile ?
+        'touchend' :
+        'click', e => updateFunction(e, update), {passive: false});
   }
 
   renderControlType() {
