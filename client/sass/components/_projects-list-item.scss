@@ -1,7 +1,7 @@
 .projects-list-item {
   @include transition(0.2s);
   cursor: pointer;
-  height: 150px;
+  height: 100px;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
 
   &:hover {

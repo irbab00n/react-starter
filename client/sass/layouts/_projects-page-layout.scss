@@ -1,6 +1,8 @@
 $side-track-collapsed-width: 0px;
 $side-track-expanded-width: 400px;
 
+$main-track-max-width: 980px;
+
 .projects-page-layout {
   @include flex;
   @include box-size-border-box;
@@ -31,7 +33,7 @@ $side-track-expanded-width: 400px;
     Since the sidebar is removed from the flow of the page,
     we need to create a margin-based gap to compensate for the element size
   */
-  @include transition(0.2s);
+  @include transition(0.4s);
   margin-left: $side-track-expanded-width;
   overflow-y: scroll;
   height: calc(100vh - #{$navbar-height});
@@ -65,7 +67,7 @@ $side-track-expanded-width: 400px;
   .side-track {
     @include flex;
     position: relative;
-    height: 150px;
+    height: 100px;
     overflow-x: scroll;
     min-width: 100%;
 
@@ -76,8 +78,10 @@ $side-track-expanded-width: 400px;
   }
 
   .main-track {
-    width: 100%;
-    margin-left: 0;
+    background-color: $blue-grey-50;
+    width: 1000px;
+    // margin-left: 0;
+    margin: 0 auto;
   }
 }
 

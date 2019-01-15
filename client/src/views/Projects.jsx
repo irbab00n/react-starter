@@ -28,7 +28,7 @@ export default class Projects extends React.Component {
           currentIndex: index,
           fadeOut: false
         });
-      }, 200);
+      }, 400);
     });
   }
 

@@ -18,7 +18,7 @@ export default class ProjectPanel extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({showContent: true});
-    } , 200);
+    } , 400);
   }
 
   shouldComponentUpdate(nextProps) {
