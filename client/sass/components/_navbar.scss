@@ -1,7 +1,7 @@
 $navbar-height: 60px;
 $navbar-padding-dimension: 12px;
-$navbar-shadow-veritical: 2.5px;
-$navbar-shadow-blur: 5px;
+$navbar-shadow-veritical: 1.5px;
+$navbar-shadow-blur: 3px;
 $navbar-shadow-color: rgba(25, 25, 25, 0.4);
 
 $navbar-inner-wrapper-padding: 40px;
@@ -36,5 +36,10 @@ $navbar-inner-wrapper-padding: 40px;
   &:hover {
     text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);
     color: $blue-grey-50;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 3px rgba(25, 25, 25, 0.5);
+    color: $amber-500;
   }
 }

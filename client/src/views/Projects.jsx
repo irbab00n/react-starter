@@ -9,19 +9,31 @@ export default class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      fadeOut: false,
     };
     this.setCurrentIndex = this.setCurrentIndex.bind(this);
   }
 
   setCurrentIndex(index) {
+    const { currentIndex } = this.state;
+
+    if (currentIndex === index) {return;}
+
     this.setState({
-      currentIndex: index
+      fadeOut: true
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          currentIndex: index,
+          fadeOut: false
+        });
+      }, 200);
     });
   }
 
   render() {
-    const { currentIndex } = this.state;
+    const { currentIndex, fadeOut } = this.state;
     
     return (
       <main className="projects-page-layout">
@@ -31,7 +43,9 @@ export default class Projects extends React.Component {
           onSelectFunction={this.setCurrentIndex}
         />
         <ProjectPanel
+          currentIndex={currentIndex}
           project={projects[currentIndex]}
+          fadeOut={fadeOut}
         />
       </main>
     );

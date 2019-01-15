@@ -4,7 +4,7 @@ $side-track-expanded-width: 400px;
 .projects-page-layout {
   @include flex;
   @include box-size-border-box;
-  height: calc(100% - #{$navbar-height}); width: 100%;
+  width: 100%;
   margin: $navbar-height auto 0 auto;
 }
 
@@ -31,18 +31,73 @@ $side-track-expanded-width: 400px;
     Since the sidebar is removed from the flow of the page,
     we need to create a margin-based gap to compensate for the element size
   */
-  background-color: $blue-grey-100;
+  @include transition(0.2s);
   margin-left: $side-track-expanded-width;
   overflow-y: scroll;
   height: calc(100vh - #{$navbar-height});
+  opacity: 0;
   width: calc(100% - #{$side-track-expanded-width});
 
   & > .inner-wrapper {
     padding: 20px;
     margin: 0 auto;
-    min-width: 680px; max-width: 980px; width: 100%;
+    max-width: 980px; width: 100%;
 
     &.full-width { max-width: 100%; }
     &.no-padding { padding: 0px !important; }
   }
+
+  /* PAGE BOTTOM SPACING */
+  & > *:last-child {
+    margin-bottom: 100px;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1440px) {
+  .projects-page-layout {
+    @include flex-column;
+  }
+
+  .side-track {
+    @include flex;
+    position: relative;
+    height: 150px;
+    overflow-x: scroll;
+    min-width: 80%;
+
+    & > .inner-wrapper {
+      min-width: $side-track-expanded-width;
+      max-width: $side-track-expanded-width;
+    }
+  }
+
+  .main-track {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Responsive Work - Move this to individual files as we grow */
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
 }

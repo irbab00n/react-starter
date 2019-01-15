@@ -1,26 +1,29 @@
 $project-pictures-height: 500px;
 
+/* TITLE */
 .project-title-wrapper {
   @include flex; @include align-center; @include justify-between;
 
   & > h1 {
+    color: $blue-grey-900;
     font-size: 48px;
-    margin: 36px 20px;
+    margin: 36px 0;
   }
   & > h2 {
     font-size: 40px;
-    margin: 32px 20px;
+    margin: 32px 0;
   }
   & > h3 {
     font-size: 32px;
-    margin: 28px 20px;
+    margin: 28px 0;
   }
   & > h4 {
     font-size: 24px;
-    margin: 24px 20px;
+    margin: 24px 0;
   }
 }
 
+/* STACK TECH LABEL */
 ul.project-tech-wrapper {
   @include flex; @include align-center;
   list-style: none;
@@ -30,7 +33,44 @@ ul.project-tech-wrapper > li {
   margin-right: 20px;
 }
 
-.project-pictures-wrapper {
-  background-color: $blue-grey-300;
-  height: $project-pictures-height; width: 100%;
+/* SPLIT LAYOUT WRAPPER */
+.project-split-wrapper {
+  @include flex; @include align-center; @include justify-between;
+  padding: 20px 0;
+}
+
+/* LINKS */
+.project-links-wrapper {
+  @include flex; @include flex-column;
+  min-width: 50%;
+  margin-right: 10px;
+}
+
+/* LINK LINE */
+.project-links-wrapper > .link-line {
+  @include flex; @include align-center;
+  margin-bottom: 5px;
+  
+  & > i {
+    color: $blue-grey-900;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
+
+/* CONTRIBUTORS */
+.project-contributors-wrapper {
+  margin-left: 10px;
+}
+
+/* DESCRIPTION */
+.project-description-wrapper {
+  color: $blue-grey-900;
+  font-size: 16px; font-weight: 500; letter-spacing: 0.9px;
+  padding: 20px 0;
+}
+
+/* IMAGE CAROUSEL OVERRIDES */
+.carousel .slide .legend {
+  border-radius: 4px;
 }

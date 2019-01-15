@@ -16,8 +16,6 @@ const Home = (props) => (
     <SkillCarousel
       skills={skills}
     />
-
-    <Jumbotron />
     
     <Footer />
 
