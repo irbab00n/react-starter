@@ -68,8 +68,9 @@ $main-track-max-width: 980px;
 
   .side-track {
     @include flex;
+    background-color: $blue-grey-900;
     position: relative;
-    height: 150px;
+    height: 110px;
     overflow-x: scroll;
     width: 100%;
 
@@ -83,7 +84,7 @@ $main-track-max-width: 980px;
 
   .main-track {
     background-color: $blue-grey-50;
-    width: 1000px;
+    width: 100%;
     // margin-left: 0;
     margin: 0 auto;
   }

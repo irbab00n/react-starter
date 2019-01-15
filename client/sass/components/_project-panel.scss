@@ -3,6 +3,7 @@ $project-pictures-height: 500px;
 /* TITLE */
 .project-title-wrapper {
   @include flex; @include align-center; @include justify-between;
+  overflow: hidden;
 
   & > h1 {
     color: $blue-grey-900;
@@ -21,6 +22,8 @@ $project-pictures-height: 500px;
     font-size: 24px;
     margin: 24px 0;
   }
+
+  &.col { @include flex-column; }
 }
 
 /* STACK TECH LABEL */
@@ -31,6 +34,10 @@ ul.project-tech-wrapper {
 ul.project-tech-wrapper > li {
   @include flex;
   margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
 }
 
 /* SPLIT LAYOUT WRAPPER */

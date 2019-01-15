@@ -1,8 +1,9 @@
 .projects-list-item {
   @include transition(0.2s);
   cursor: pointer;
-  height: 150px;
+  background-color: $blue-grey-100;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
+  height: 150px;
 
   &:hover {
     background-color: white;
@@ -54,15 +55,14 @@
 }
 
 @media (max-width: 1440px) {
-
+  .projects-list-item {
+    height: 100px;
+  }
 }
 
 /* Responsive Work - Move this to individual files as we grow */
 /* Viewport, right after iPad */
 @media (max-width: 1023px) {
-  .projects-list-item {
-    height: 100px;
-  }
 }
 
 /* iPad Portrait */

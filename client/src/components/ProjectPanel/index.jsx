@@ -9,6 +9,8 @@ export default class ProjectPanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isPortrait: window.innerHeight > window.innerWidth,
+      rerender: false,
       showContent: false
     };
     this.buildTechLabelImages = this.buildTechLabelImages.bind(this);
@@ -17,15 +19,32 @@ export default class ProjectPanel extends React.Component {
   }
 
   componentDidMount() {
+    if ('onorientationchange' in window) {
+      window.addEventListener("orientationchange", () => {
+        this.setState({
+          isPortrait: !this.state.isPortrait
+        });
+        console.log("onorientationchange");
+      }, false);
+    }
+    // } else if ('onresize' in window) {
+    //     window.addEventListener("resize", () => {
+    //       this.setState({
+    //         isPortrait: !this.state.isPortrait
+    //       });
+    //       console.log("resize");
+    //     }, false);
+    // }
+
     setTimeout(() => {
       this.setState({showContent: true});
     } , 400);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     const { currentIndex, fadeOut } = nextProps;
     let updatedState = {};
-
+    
     if (fadeOut === true && fadeOut !== this.props.fadeOut) {
       updatedState.showContent = false;
     }
@@ -51,23 +70,29 @@ export default class ProjectPanel extends React.Component {
   }
 
   buildImageCarouselElements(pictures) {
+    const { isPortrait } = this.state; 
     return pictures.map((picture, index) => {
       return (
         <div key={`image-carousel-image-${index}`}>
           <img src={picture.link} />
-          <p className="legend">{picture.description}</p>
+          {
+            isPortrait ?
+              null :
+              <p className="legend">{picture.description}</p>
+          }
         </div>
       );
     });
   }
 
   renderCarousel(pictures) {
+    const { isPortrait } = this.state;
     let width = isMobile ? '680px' : '980px';
+    isMobile && isPortrait ? width = '360px' : null;
 
     return (
       <Carousel
         showThumbs={false}
-        onChange={(arg1, arg2) => console.log('changing the position: ', arg1, arg2)}
         width={width}
       >
         {
@@ -78,14 +103,14 @@ export default class ProjectPanel extends React.Component {
   }
 
   render() {
-    const { showContent } = this.state;
+    const { isPortrait, showContent } = this.state;
     const { project } = this.props;
     
     return (
       <section className={`main-track ${showContent ? 'show' : ''}`}>
       
         <div className="inner-wrapper no-padding">
-          <div className="project-title-wrapper no-padding">
+          <div className={`project-title-wrapper no-padding ${isPortrait ? 'col' : ''}`}>
             <h1>{project.title}</h1>
             <ul className="project-tech-wrapper">
               {
