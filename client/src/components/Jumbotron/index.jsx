@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import JumbotronSlide from './JumbotronSlide';
 import SlideSelectorList from './SlideSelectorList';
 
@@ -17,7 +18,11 @@ const slides = [
     textWhite: true
   },
   {
-    feature: () => (null),
+    feature: (show) => (
+      <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
+        <Link to="/projects"><button className="large-font">Projects</button></Link>
+      </div>
+    ),
     subtitle: 'See what I\'ve been working on',
     title: 'My Projects',
     textWhite: false

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -30,6 +31,7 @@ export default class ProjectPanel extends React.Component {
 
     if (currentIndex !== this.props.currentIndex) {
       updatedState.showContent = true;
+      ReactDOM.findDOMNode(this).scrollTop = 0;
     }
 
     if (Object.keys(updatedState).length > 0) {

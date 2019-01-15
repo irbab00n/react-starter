@@ -67,7 +67,7 @@ $side-track-expanded-width: 400px;
     position: relative;
     height: 150px;
     overflow-x: scroll;
-    min-width: 80%;
+    min-width: 100%;
 
     & > .inner-wrapper {
       min-width: $side-track-expanded-width;

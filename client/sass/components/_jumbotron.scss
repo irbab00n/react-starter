@@ -108,6 +108,10 @@ $jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
 .jumbotron-slide-container > a {
   text-decoration: none;
   margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
 }
 .jumbotron-slide-container > a > button {
   @include flex; @include align-center; @include justify-center;
