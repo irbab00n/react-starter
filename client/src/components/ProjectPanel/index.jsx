@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { isMobile } from 'react-device-detect';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -61,11 +62,13 @@ export default class ProjectPanel extends React.Component {
   }
 
   renderCarousel(pictures) {
+    let width = isMobile ? '680px' : '980px';
+
     return (
       <Carousel
         showThumbs={false}
         onChange={(arg1, arg2) => console.log('changing the position: ', arg1, arg2)}
-        width={'980px'}
+        width={width}
       >
         {
           this.buildImageCarouselElements(pictures)
@@ -92,7 +95,7 @@ export default class ProjectPanel extends React.Component {
           </div>
         </div>
 
-        <div className="inner-wrapper no-padding">
+        <div className="inner-wrapper full-width jcc dark-bg no-padding">
           {this.renderCarousel(project.pictures)}
         </div>
 

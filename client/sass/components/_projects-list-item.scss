@@ -1,7 +1,7 @@
 .projects-list-item {
   @include transition(0.2s);
   cursor: pointer;
-  height: 100px;
+  height: 150px;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
 
   &:hover {
@@ -51,4 +51,32 @@
       filter: grayscale(0%);
     }
   }
+}
+
+@media (max-width: 1440px) {
+
+}
+
+/* Responsive Work - Move this to individual files as we grow */
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+  .projects-list-item {
+    height: 100px;
+  }
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
 }
