@@ -53,8 +53,8 @@ export default class ProjectPanel extends React.Component {
     return pictures.map((picture, index) => {
       return (
         <div key={`image-carousel-image-${index}`}>
-            <img src={picture.link} />
-            <p className="legend">{picture.description}</p>
+          <img src={picture.link} />
+          <p className="legend">{picture.description}</p>
         </div>
       );
     });
