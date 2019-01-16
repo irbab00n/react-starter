@@ -52,7 +52,7 @@ module.exports = [
     ],
     title: 'cosbytes.com',
     link: 'https://cosbytes.com',
-    repo: 'https://github.com/irbab00n/portfolio',
+    repo: 'https://github.com/irbab00n/cosbytes',
     contributors: ['Thomas Cosby'],
     stack: [
       'react',

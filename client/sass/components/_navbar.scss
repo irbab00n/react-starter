@@ -43,3 +43,26 @@ $navbar-inner-wrapper-padding: 40px;
     color: $amber-500;
   }
 }
+
+.navbar-inner-wrapper > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar-inner-wrapper > ul > li > a {
+  @include transition(0.2s);
+  cursor: pointer;
+  color: $blue-grey-100;
+  font-size: 16px; font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);
+    color: $blue-grey-50;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 3px rgba(25, 25, 25, 0.5);
+    color: $amber-500;
+  }
+}
