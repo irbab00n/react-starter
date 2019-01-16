@@ -38,10 +38,11 @@ ul.project-tech-wrapper {
   padding: 0 0 0 20px;
 }
 ul.project-tech-wrapper > li {
-  @include flex;
+  
   margin-right: 20px;
 
-  & > img {
+  & > label { @include flex; @include align-center; @include justify-center; }
+  & > label > img {
     @include transition(0.2s);
     height: 24px; width: 24px;
     -webkit-filter: drop-shadow(1px 1px 1px rgba(100, 100, 100, 0.4));
@@ -56,8 +57,10 @@ ul.project-tech-wrapper > li {
 
 /* SPLIT LAYOUT WRAPPER */
 .project-split-wrapper {
-  @include flex; @include align-center; @include justify-between;
+  @include flex; @include justify-between;
   padding: 40px 0;
+
+  &.ac { @include align-center; }
 }
 
 /* LINKS */
@@ -98,17 +101,39 @@ ul.project-tech-wrapper > li {
 
 /* CONTRIBUTORS */
 .project-contributors-wrapper {
+  @include flex; @include flex-column;
   margin-left: 10px;
+
+  & > h4 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+  }
+
+  & > ul {
+    padding: 0;
+    margin: 0;
+  }
+  & > ul > li {
+    margin-right: 10px;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
 }
 
 /* DESCRIPTION */
 .project-description-wrapper {
   color: $blue-grey-900;
-  font-size: 16px; font-weight: 500; letter-spacing: 0.9px;
+  font-size: 16px; font-weight: 500;
   padding: 20px 0;
 }
 
 /* IMAGE CAROUSEL OVERRIDES */
 .carousel .slide .legend {
   border-radius: 4px;
+}
+.carousel.carousel-slider .control-arrow {
+  padding: 20px !important;
 }

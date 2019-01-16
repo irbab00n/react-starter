@@ -5,6 +5,8 @@ import { isMobile } from 'react-device-detect';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
+import Footer from '../Footer/';
+
 const images = {
   'aws': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/aws-ec2.png',
   'express': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/express-bw-200.png',
@@ -26,8 +28,9 @@ export default class ProjectPanel extends React.Component {
       rerender: false,
       showContent: false
     };
-    this.buildTechLabelImages = this.buildTechLabelImages.bind(this);
+    this.buildContributorList = this.buildContributorList.bind(this);
     this.buildImageCarouselElements = this.buildImageCarouselElements.bind(this);
+    this.buildTechLabelImages = this.buildTechLabelImages.bind(this);
     this.renderCarousel = this.renderCarousel.bind(this);
   }
 
@@ -78,13 +81,13 @@ export default class ProjectPanel extends React.Component {
     return true;
   }
 
-  /* Goes through the tags and matches the appropriate image for the tag */
-  buildTechLabelImages(imageTags) {
-    return imageTags.map((imageTag, index) => {
+  buildContributorList(contributors) {
+    return contributors.map((contributor, index) => {
       return (
-        <li key={`tech-label-image-${index}`}>
-          {/* Look up the tag in the image cache, pull out the url, set as img src */}
-          <img src={images[imageTag]}/>
+        <li
+          key={`contributor-${index}`}
+        >
+          {contributor}
         </li>
       );
     });
@@ -102,6 +105,18 @@ export default class ProjectPanel extends React.Component {
               <p className="legend">{picture.description}</p>
           }
         </div>
+      );
+    });
+  }
+  
+  /* Goes through the tags and matches the appropriate image for the tag */
+  buildTechLabelImages(imageTags) {
+    return imageTags.map((imageTag, index) => {
+      return (
+        <li key={`tech-label-image-${index}`}>
+          {/* Look up the tag in the image cache, pull out the url, set as img src */}
+          <label title={imageTag}><img src={images[imageTag]}/></label>
+        </li>
       );
     });
   }
@@ -141,29 +156,36 @@ export default class ProjectPanel extends React.Component {
           </div>
         </div>
 
-        <div className="inner-wrapper full-width jcc light-bg no-padding">
+        <div className="inner-wrapper full-width jcc dark-bg box-shadow no-padding">
           {this.renderCarousel(project.pictures)}
         </div>
 
        
 
-        <div className="inner-wrapper no-padding">
+        <div className="inner-wrapper no-padding top-spacer">
           <div className="project-split-wrapper">
             <div className="project-links-wrapper">
               <div className="link-line"><i className="fas fa-link"></i><a href={project.link}>{project.link}</a></div>
               <div className="link-line"><i className="fab fa-github"></i><a href={project.repo}>{project.repo}</a></div>
             </div>
             <div className="project-contributors-wrapper">
-              {project.contributors}
+              <h4>Contributors</h4>
+              <ul>
+                {
+                  this.buildContributorList(project.contributors)
+                }
+              </ul>
             </div>
           </div>
         </div>
 
-        <div className="inner-wrapper no-padding">
+        <div className="inner-wrapper no-padding bottom-spacer">
           <div className="project-description-wrapper">
             {project.description}
           </div>
         </div>
+
+        <Footer />
 
       </section>
     );

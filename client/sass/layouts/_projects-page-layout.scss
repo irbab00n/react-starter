@@ -45,15 +45,13 @@ $main-track-max-width: 980px;
     margin: 0 auto;
     max-width: 980px; width: 100%;
 
-    &.dark-bg { background-color: $blue-grey-900; }
+    &.dark-bg { @include jumbotron-background; background-color: #1774B5; }
     &.jcc { @include flex; @include justify-center; }
     &.full-width { max-width: 100%; }
     &.no-padding { padding: 0px !important; }
-  }
-
-  /* PAGE BOTTOM SPACING */
-  & > *:last-child {
-    margin-bottom: 100px;
+    &.bottom-spacer { margin-bottom: 100px; }
+    &.top-spacer { margin-top: 40px; }
+    &.box-shadow { @include box-shadow(0px, 2px, 3px, 1px, rgba(25, 25, 25, 0.4)); }
   }
 
   &.show {
