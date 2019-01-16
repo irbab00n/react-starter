@@ -68,15 +68,15 @@ $main-track-max-width: 980px;
 
   .side-track {
     @include flex;
-    background-color: $blue-grey-900;
+    background-color: $blue-grey-100;
     position: relative;
     height: 110px;
     overflow-x: scroll;
     width: 100%;
 
     & > .inner-wrapper {
-      border-left: 2px solid rgba(150, 150, 150, 0.8);
-      border-right: 2px solid rgba(150, 150, 150, 0.8);
+      border-left: 2px solid $amber-400;
+      border-right: 2px solid $amber-400;
       min-width: $side-track-expanded-width;
       max-width: $side-track-expanded-width;
     }

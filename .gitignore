@@ -66,3 +66,6 @@ typings/
 /public/styles.css
 /public/styles.css.map
 /public/*.png
+
+# Working files
+/client/working-files

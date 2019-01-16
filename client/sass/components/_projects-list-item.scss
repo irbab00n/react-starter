@@ -1,7 +1,7 @@
 .projects-list-item {
   @include transition(0.2s);
   cursor: pointer;
-  background-color: $blue-grey-100;
+  background-color: $blue-grey-50;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
   height: 150px;
 
@@ -19,27 +19,27 @@
 }
 
 .list-item-split-wrapper {
+  @include transition(0.2s);
   @include flex; @include align-center; @include justify-between;
   height: 100%;
 
   & > h4 {
     font-size: 24px; font-weight: 500;
+    max-width: 50%;
     margin: 0 0 0 20px;
-  }
-
-  & > img {
-    width: 50%;
-    height: auto;
   }
 }
 
 .list-item-image-wrapper {
-  // @include jumbotron-background;
+  // @include jumbotron-background;\
+  @include transition(0.2s);
   overflow: hidden;
-  height: 100%; width: 50%;
+  height: 100%; width: 50%; max-width: 50%;
+  padding: 20px;
 
   & > .image {
     @include transition(0.2s);
+    @include box-shadow(1px, 1px, 2px, 0px, rgba(50, 50, 50, 0.6));
     height: 100%; width: 100%;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -48,6 +48,7 @@
     filter: grayscale(80%);
 
     &:hover {
+      @include box-shadow(2px, 2px, 4px, 1px, rgba(50, 50, 50, 0.6));
       -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
       filter: grayscale(0%);
     }

@@ -3,6 +3,7 @@ $project-pictures-height: 500px;
 /* TITLE */
 .project-title-wrapper {
   @include flex; @include align-center; @include justify-between;
+  height: 120px;
   overflow: hidden;
 
   & > h1 {
@@ -29,21 +30,34 @@ $project-pictures-height: 500px;
 /* STACK TECH LABEL */
 ul.project-tech-wrapper {
   @include flex; @include align-center;
+  box-shadow: inset 0px 0px 10px $blue-grey-900;
+  background-color: $blue-grey-500;
+  border-radius: 4px;
+  height: 48px;
   list-style: none;
+  padding: 0 0 0 20px;
 }
 ul.project-tech-wrapper > li {
   @include flex;
   margin-right: 20px;
 
-  &:last-child {
-    margin-right: 0px;
+  & > img {
+    @include transition(0.2s);
+    height: 24px; width: 24px;
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(100, 100, 100, 0.4));
+    filter: drop-shadow(1px 1px 1px rgba(100, 100, 100, 0.4));
+
+    &:hover {
+      -webkit-filter: drop-shadow(1px 1px 1px rgba(50, 50, 50, 0.6));
+      filter: drop-shadow(1px 1px 1px rgba(50, 50, 50, 0.6));
+    }
   }
 }
 
 /* SPLIT LAYOUT WRAPPER */
 .project-split-wrapper {
   @include flex; @include align-center; @include justify-between;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 /* LINKS */
@@ -62,6 +76,23 @@ ul.project-tech-wrapper > li {
     color: $blue-grey-900;
     font-size: 20px;
     margin-right: 10px;
+  }
+  
+  & > a {
+    @include transition(0.2s);
+    font-size: 16px;
+
+    &:hover {
+      color: $amber-900;
+    }
+
+    &:active {
+      color: $blue-grey-900;
+    }
+
+    &:visted {
+      color: $indigo-500;
+    }
   }
 }
 
