@@ -1,5 +1,8 @@
 $side-track-collapsed-width: 0px;
-$side-track-expanded-width: 400px;
+$side-track-expanded-width-full: 600px;
+$side-track-expanded-width-2560: 480px;
+$side-track-expanded-width-1920: 400px;
+$side-track-expanded-width-1440: 400px;
 
 $main-track-max-width: 980px;
 
@@ -21,7 +24,7 @@ $main-track-max-width: 980px;
   position: fixed;
   overflow-y: scroll;
   height: calc(100vh - #{$navbar-height});
-  width: $side-track-expanded-width;
+  width: $side-track-expanded-width-full;
 
   & > .inner-wrapper {
     width: 100%;
@@ -34,16 +37,16 @@ $main-track-max-width: 980px;
     we need to create a margin-based gap to compensate for the element size
   */
   @include transition(0.4s);
-  margin-left: $side-track-expanded-width;
+  margin-left: $side-track-expanded-width-full;
   overflow-y: scroll;
   height: calc(100vh - #{$navbar-height});
   opacity: 0;
-  width: calc(100% - #{$side-track-expanded-width});
+  width: calc(100% - #{$side-track-expanded-width-full});
 
   & > .inner-wrapper {
     padding: 20px;
     margin: 0 auto;
-    max-width: 980px; width: 100%;
+    max-width: 1920px; width: 100%;
 
     &.dark-bg { @include jumbotron-background; background-color: #1774B5; }
     &.jcc { @include flex; @include justify-center; }
@@ -59,6 +62,39 @@ $main-track-max-width: 980px;
   }
 }
 
+@media (max-width: 2560px) {
+  .main-track {
+    margin-left: $side-track-expanded-width-2560;
+    width: calc(100% - #{$side-track-expanded-width-2560});
+
+    & > .inner-wrapper {
+      max-width: 1440px;
+    }
+  }
+
+  .side-track {
+    min-width: $side-track-expanded-width-2560;
+    max-width: $side-track-expanded-width-2560;
+  }
+}
+
+@media (max-width: 1920px) {
+  .main-track {
+    margin-left: $side-track-expanded-width-1920;
+    width: calc(100% - #{$side-track-expanded-width-1920});
+
+    & > .inner-wrapper {
+      max-width: 980px;
+    }
+  }
+
+  .side-track {
+    min-width: $side-track-expanded-width-1920;
+    max-width: $side-track-expanded-width-1920;
+  }
+}
+
+
 @media (max-width: 1440px) {
   .projects-page-layout {
     @include flex-column;
@@ -70,21 +106,24 @@ $main-track-max-width: 980px;
     position: relative;
     height: 110px;
     overflow-x: scroll;
-    width: 100%;
+    min-width: 100%;
 
     & > .inner-wrapper {
       border-left: 2px solid $amber-400;
       border-right: 2px solid $amber-400;
-      min-width: $side-track-expanded-width;
-      max-width: $side-track-expanded-width;
+      min-width: $side-track-expanded-width-1440;
+      max-width: $side-track-expanded-width-1440;
     }
   }
 
   .main-track {
     background-color: $blue-grey-50;
     width: 100%;
-    // margin-left: 0;
     margin: 0 auto;
+
+    // & > .inner-wrapper {
+      
+    // }
   }
 }
 
@@ -108,16 +147,20 @@ $main-track-max-width: 980px;
 
 /* iPad Portrait */
 @media (max-width: 768px) {
+
 }
 
 /* Right after iPad Portrait */
 @media (max-width: 767px) {
+
 }
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
+
 }
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
+
 }

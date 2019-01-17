@@ -49,6 +49,12 @@ $navbar-inner-wrapper-padding: 40px;
   padding: 0;
   list-style: none;
 }
+.navbar-inner-wrapper > ul > li {
+  display: inline-block;
+  margin-right: 20px;
+
+  &:last-child { margin-right: 0px; }
+}
 .navbar-inner-wrapper > ul > li > a {
   @include transition(0.2s);
   cursor: pointer;

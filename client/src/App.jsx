@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from 'react-router-dom';
 
+import Blog from './views/Blog.jsx';
 import Home from './views/Home.jsx';
 import Projects from './views/Projects.jsx';
 
@@ -19,14 +20,13 @@ export default class App extends React.Component {
 
   render() {
 
-    // console.log(this.props);
-
     return (
       <div id="application-wrapper">
         <Navbar />
         <Router history={hist}>
           <Switch>
             <Route exact path="/" component={Home}/>
+            <Route path="/blog" component={Blog}/>            
             <Route path="/projects" component={Projects}/>
           </Switch>
         </Router>

@@ -14,7 +14,7 @@ $jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
 
   &.default-bg {
     // background-color: #498cb6;
-    background-color: #1774B5;
+    background-color: #0F6DB4;
   }
   &.medium-bg {
     // background-color: #498cb6;
@@ -137,6 +137,7 @@ $jumbotron-shadow-color: rgba(25, 25, 25, 0.2);
   }
 
   &:active {
+    @include box-shadow(1px, 1px, 2px, 1px, rgba(25, 25, 25, 0.5));
     background-color: $amber-500;
   }
 

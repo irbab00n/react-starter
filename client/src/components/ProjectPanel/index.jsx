@@ -125,6 +125,8 @@ export default class ProjectPanel extends React.Component {
     const { isPortrait } = this.state;
     let width = isMobile ? '680px' : '980px';
     isMobile && isPortrait ? width = '360px' : null;
+    window.innerWidth > 2000 ? width = '1440px' : null;
+    window.innerWidth > 2560 ? width = '1920px' : null;
 
     return (
       <Carousel

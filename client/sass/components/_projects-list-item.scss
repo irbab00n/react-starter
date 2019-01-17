@@ -3,7 +3,7 @@
   cursor: pointer;
   background-color: $blue-grey-50;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
-  height: 150px;
+  height: 220px;
 
   &:hover {
     background-color: white;
@@ -52,6 +52,19 @@
       -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
       filter: grayscale(0%);
     }
+  }
+}
+
+
+@media (max-width: 2560px) {
+  .projects-list-item {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .projects-list-item {
+    height: 140px;
   }
 }
 

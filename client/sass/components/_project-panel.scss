@@ -3,24 +3,24 @@ $project-pictures-height: 500px;
 /* TITLE */
 .project-title-wrapper {
   @include flex; @include align-center; @include justify-between;
-  height: 120px;
+  height: 250px;
   overflow: hidden;
 
   & > h1 {
     color: $blue-grey-900;
-    font-size: 48px;
+    font-size: 96px;
     margin: 36px 0;
   }
   & > h2 {
-    font-size: 40px;
+    font-size: 88px;
     margin: 32px 0;
   }
   & > h3 {
-    font-size: 32px;
+    font-size: 80px;
     margin: 28px 0;
   }
   & > h4 {
-    font-size: 24px;
+    font-size: 72px;
     margin: 24px 0;
   }
 
@@ -136,4 +136,86 @@ ul.project-tech-wrapper > li {
 }
 .carousel.carousel-slider .control-arrow {
   padding: 20px !important;
+}
+
+
+@media (max-width: 2560px) {
+  .project-title-wrapper {
+    height: 160px;
+
+    & > h1 {
+      color: $blue-grey-900;
+      font-size: 64px;
+      margin: 36px 0;
+    }
+    & > h2 {
+      font-size: 56px;
+      margin: 32px 0;
+    }
+    & > h3 {
+      font-size: 48px;
+      margin: 28px 0;
+    }
+    & > h4 {
+      font-size: 36px;
+      margin: 24px 0;
+    }
+  }
+}
+
+@media (max-width: 1920px) {
+  .project-title-wrapper {
+    height: 140px;
+
+    & > h1 {
+      color: $blue-grey-900;
+      font-size: 48px;
+      margin: 36px 0;
+    }
+    & > h2 {
+      font-size: 40px;
+      margin: 32px 0;
+    }
+    & > h3 {
+      font-size: 32px;
+      margin: 28px 0;
+    }
+    & > h4 {
+      font-size: 24px;
+      margin: 24px 0;
+    }
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .project-title-wrapper {
+    height: 120px;
+  }
+}
+
+/* Responsive Work - Move this to individual files as we grow */
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+  .project-title-wrapper {}
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+  .project-title-wrapper {}
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+  .project-title-wrapper {}
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+  .project-title-wrapper {}
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
+  .project-title-wrapper {}
 }
