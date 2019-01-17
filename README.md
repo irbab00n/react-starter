@@ -2,6 +2,9 @@
 
 This Repo is the front-end application for cosbytes.com
 
+Dev link: dev.cosbytes.com
+Prod link: cosbytes.com
+
 ## How to run the application:
 
 Before running the application, all dependencies must be downloaded first.
