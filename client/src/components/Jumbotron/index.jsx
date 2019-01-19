@@ -28,7 +28,11 @@ const slides = [
     textWhite: false
   },
   {
-    feature: () => (null),
+    feature: (show) => (
+      <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
+        <Link to="/blog"><button className="large-font">Blog</button></Link>
+      </div>
+    ),
     subtitle: 'See what\'s been on my mind',
     title: 'My blog',
     textWhite: false

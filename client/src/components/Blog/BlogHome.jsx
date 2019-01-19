@@ -19,6 +19,20 @@ export default class BlogHome extends React.Component {
     };
   }
 
+  componentWillMount() {
+    let page = this.props.match.params.page || 1;
+    
+    this.fetchPosts(page)
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({loaded: false});
+    
+    let page = nextProps.match.params.page || 1;
+    
+    this.fetchPosts(page)
+  }
+  
   fetchPosts(page) {
     console.log('fetching posts with page: ', page);
     butter.post.list({page: page, page_size: 10})
@@ -30,20 +44,6 @@ export default class BlogHome extends React.Component {
           meta: response.data.meta
         });
     });
-  }
-
-  componentWillMount() {
-    let page = this.props.match.params.page || 1;
-
-    this.fetchPosts(page)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({loaded: false});
-
-    let page = nextProps.match.params.page || 1;
-
-    this.fetchPosts(page)
   }
 
   render() {

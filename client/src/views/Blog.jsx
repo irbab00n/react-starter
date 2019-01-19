@@ -5,7 +5,7 @@ import BlogHome from '../components/Blog/BlogHome';
 import BlogPost from '../components/Blog/BlogPost';
 
 const Blog = (props) => (
-  <main className="main-page-layout">
+  <main className="blog-page-layout">
     <Switch>
       <Route exact path={props.match.url} component={BlogHome} />
       <Route path={`${props.match.url}/p/:page`}  component={BlogHome} />

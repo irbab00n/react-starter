@@ -207,12 +207,37 @@ ul.project-tech-wrapper > li {
 
 /* Right after iPad Portrait */
 @media (max-width: 767px) {
-  .project-title-wrapper {}
+  .project-title-wrapper {
+    padding: 0 20px;
+  }
+
+  .project-split-wrapper {
+    @include flex-column;
+    padding: 0 20px;
+  }
+  
+  .project-contributors-wrapper {
+    padding: 20px 0;
+  }
+  
+  .project-description-wrapper {
+    padding: 0 20px;
+  }
 }
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
-  .project-title-wrapper {}
+  .project-title-wrapper {
+    @include flex-column;
+  }
+
+  ul.project-tech-wrapper > li {
+    margin-bottom: 20px;
+  }
+
+  .project-split-wrapper {
+    @include flex-column; @include justify-center;
+  }
 }
 
 /* Remove some paddings in extra small screens for more working area */

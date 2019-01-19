@@ -75,6 +75,13 @@
                         supported by Chrome and Opera */
 }
 
+/* FLEX ORDER */
+@mixin order($order) {
+  -webkit-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  order: $order;
+}
+
 /* Transition Mixins */
 
 @mixin transition($delay) {

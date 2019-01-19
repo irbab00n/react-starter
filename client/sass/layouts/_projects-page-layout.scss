@@ -9,8 +9,8 @@ $main-track-max-width: 980px;
 .projects-page-layout {
   @include flex;
   @include box-size-border-box;
-  width: 100%;
   margin: $navbar-height auto 0 auto;
+  width: 100%;
 }
 
 .side-track {
@@ -22,6 +22,7 @@ $main-track-max-width: 980px;
   @include box-shadow(1px, 0px, 8px, 2px, rgba(25, 25, 25, 0.2));
   background-color: $blue-grey-50;
   position: fixed;
+  opacity: 0;
   overflow-y: scroll;
   height: calc(100vh - #{$navbar-height});
   width: $side-track-expanded-width-full;
@@ -29,6 +30,8 @@ $main-track-max-width: 980px;
   & > .inner-wrapper {
     width: 100%;
   }
+
+  &.show { opacity: 1; }
 }
 
 .main-track {
@@ -152,12 +155,18 @@ $main-track-max-width: 980px;
 
 /* Right after iPad Portrait */
 @media (max-width: 767px) {
+  .main-track {
+    @include order(1);
+  }
 
+  .side-track {
+    @include order(2);
+  }
 }
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
-
+  
 }
 
 /* Remove some paddings in extra small screens for more working area */
