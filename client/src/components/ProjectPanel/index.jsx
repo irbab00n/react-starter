@@ -8,16 +8,16 @@ import { Carousel } from 'react-responsive-carousel';
 import Footer from '../Footer/';
 
 const images = {
-  'aws': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/aws-ec2.png',
-  'express': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/express-bw-200.png',
-  'heroku': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/heroku-500.png',
-  'js': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jsLogo_619x619.jpg',
-  'node': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/nodejs-512.png',
-  'postgres': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/postgres.png',
-  'react': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react_512x512.png',
-  'react-router': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react-router.png',
-  'sass': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/sass-256.png',
-  'webpack': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/webpack.png'
+  'AWS': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/aws-ec2.png',
+  'Express': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/express-bw-200.png',
+  'Heroku': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/heroku-500.png',
+  'JS': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jsLogo_619x619.jpg',
+  'Node': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/nodejs-512.png',
+  'Postgres': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/postgres.png',
+  'React': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react_512x512.png',
+  'React-Router': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react-router.png',
+  'Sass': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/sass-256.png',
+  'Webpack': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/webpack.png'
 };
 
 export default class ProjectPanel extends React.Component {

@@ -11,10 +11,10 @@ module.exports = [
     repo: 'https://github.com/irbab00n/particles-app',
     contributors: ['Thomas Cosby'],
     stack: [
-      'js',
-      'node',
-      'express',
-      'heroku'
+      'JS',
+      'Node',
+      'Express',
+      'Heroku'
     ],
     description: 'After an introduction to Three.js and WebGL, I came across Particles.js.  It\'s a simple library that you can use to quickly create an interactive feature in your web application.  It inspired me to try building a small web app that would also be a practice in creating mobile responsive layouts through CSS classes.  In the process, I had an idea to create a dynamic simulated scroll target menu that will change depending on the number of content sections you build into your website.',
     overview: 'For this project, I integrated the Particles.js library with my own custom JavaScript code to create a very simple user interface'
@@ -32,11 +32,11 @@ module.exports = [
     repo: 'https://github.com/irbab00n/note-app',
     contributors: ['Thomas Cosby'],
     stack: [
-      'react',
-      'node',
-      'express',
-      'webpack',
-      'heroku'
+      'React',
+      'Node',
+      'Express',
+      'Webpack',
+      'Heroku'
     ],
     description: 'This application allowed me to practice building a responsive grid layout containing reusable note card components that you can change and update.  This was also a great exercise to practice building functionality into a form to enrich the user experience.  One example is being able to prevent a blank card from being created by detecting whether the user has added a title and/or note body has any content added.  It was a great experience also working with in-line CSS-in-JS styling to create event-based animations to trigger.',
     overview: 'My take on the note-taking/making app built in React featuring CSS-in-JS styling'
@@ -55,13 +55,13 @@ module.exports = [
     repo: 'https://github.com/irbab00n/cosbytes',
     contributors: ['Thomas Cosby'],
     stack: [
-      'react',
-      'node',
-      'express',
-      'react-router',
-      'sass',
-      'webpack',
-      'aws'
+      'React',
+      'Node',
+      'Express',
+      'React-Router',
+      'Sass',
+      'Webpack',
+      'Heroku'
     ],
     description: 'Everything that you have seen so far has been composed of components I have created myself.  As a labor of love, my portfolio has been one of the best resources for my continually developing front-end skills.  I have combined the most popular JS front-end framework, React, with a technique known as CSS-in-JS to create a highly interactive and performant user experience.  It is packed full of unique features, inluding a custom built simulated scrolling navigation.  This project has inspired me to create a CSS-in-JS animation builder for React!',
     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
@@ -77,13 +77,13 @@ module.exports = [
     repo: 'https://github.com/nucleobase/nucleobase',
     contributors: ['Thomas Cosby', 'Gui Choupeaux', 'Chao Zeng', 'Andy Lien'],
     stack: [
-      'react',
-      'node',
-      'express',
-      'react-router',
-      'postgres',
-      'webpack',
-      'heroku'
+      'React',
+      'Node',
+      'Express',
+      'React-Router',
+      'Postgres',
+      'Webpack',
+      'Heroku'
     ],
     description: 'TrainerFinder was my Hack Reactor Thesis project.  The main challenge of our thesis was to use a starter repo designed to simulate an in-progress codebase and build our product on top of it.  I converted the server-side rendering into a React client that featured multi-tier user types to create a platform for personal trainers to create and manage their clients, appointments, and payments.  My team and I also designed a system for clients to rate and review trainers to provide more visualization to potential customers.',
     overview: 'A platform for personal trainers to operate their businesses and meet clients'

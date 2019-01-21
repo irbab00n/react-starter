@@ -1,12 +1,24 @@
+/* MAIN PAGE LAYOUT VALUES */
+/**
+ * These values must be the same as the "$navbar-height" values found within:
+ * 
+ *    /client/sass/components/_jumbotron.scss
+ * 
+ */
+$layout-navbar-padding-full: 90px; 
+$layout-navbar-padding-2560: 80px;
+$layout-navbar-padding-1920: 70px;
+$layout-navbar-padding: 60px;
 
-/* Main Page layout wrapper */
+
+/* MAIN PAGE LAYOUT WRAPPER */
 .main-page-layout {
   @include flex; @include flex-column; @include justify-center;
   @include box-size-border-box;
   width: 100%;
-  margin: $navbar-height auto 0 auto;
+  margin: $layout-navbar-padding-full auto 0 auto;
   
-  /* Main Page content container */
+  /* PAGE CONTENT CONTAINER */
   .container {
     @include box-size-border-box;
     width: 100%;
@@ -19,7 +31,7 @@
       border-bottom: 1px solid rgba(150, 158, 174, 0.6);
     }
     
-    /* Container inner wrapper */
+    /* CONTAINER INNER WRAPPER */
     .inner-wrapper {
       max-width: 980px; width: 100%;
       margin: 0 auto;
@@ -27,5 +39,51 @@
     }
 
   }
+
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 2560px) {
+  .main-page-layout {
+    margin: $layout-navbar-padding-2560 auto 0 auto;
+  }
+}
+
+/* 1920 x 1080 support */
+@media (max-width: 1920px) {
+  .main-page-layout {
+    margin: $layout-navbar-padding-1920 auto 0 auto;
+  }
+}
+
+/* 1440 x 900 support */
+@media (max-width: 1440px) {
+  .main-page-layout {
+    margin: $layout-navbar-padding auto 0 auto;
+  }
+}
+
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+  
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
 
 }

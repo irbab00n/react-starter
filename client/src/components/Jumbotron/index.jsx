@@ -65,9 +65,9 @@ export default class Jumbotron extends React.Component {
   setBackgroundColor(index) {
     switch (index) {
       case 1:
-        return 'medium-bg';
+        return 'green-bg';
       case 2:
-        return 'darkest-bg';
+        return 'orange-bg';
       default:
         return 'default-bg';
     }
@@ -79,7 +79,6 @@ export default class Jumbotron extends React.Component {
       return;
     }
 
-    // console.log('setting the jumbotron index to: ', index);
     this.setState({
       fadeOut: true
     }, () => {
@@ -91,8 +90,6 @@ export default class Jumbotron extends React.Component {
       }, 200);
     });
   }
-
-  // toggle on the show class, count the delay - 1x transition time, toggle off the hide class, change content
 
   render() {
     const { currentIndex, fadeOut } = this.state;
