@@ -16,6 +16,9 @@ $side-track-expanded-width-full: 600px;
 $side-track-expanded-width-2560: 480px;
 $side-track-expanded-width-1920: 400px;
 $side-track-expanded-width-1440: 400px;
+$side-track-expanded-width: 375px;
+
+$side-track-item-mobile-small: 350px;
 
 $main-track-max-width: 980px;
 
@@ -194,5 +197,13 @@ $main-track-max-width: 980px;
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
+  .side-track {
+    min-width: $side-track-expanded-width;
+    max-width: $side-track-expanded-width;
 
+    & > .inner-wrapper {
+      min-width: $side-track-item-mobile-small;
+      max-width: $side-track-item-mobile-small;
+    }
+  }
 }
