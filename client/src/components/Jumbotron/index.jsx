@@ -93,6 +93,13 @@ export default class Jumbotron extends React.Component {
 
   render() {
     const { currentIndex, fadeOut } = this.state;
+    /*
+      This method invocation is using a locally created 'slides' collection.
+      If the 'slides' array is removed from this file and stored externally,
+      We will need to do 1 of 2 things:
+        1. Pass the slides in as an argument to 'formatSlides'
+        2. Extract the slides from the props
+    */
     let formattedSlides = this.formatSlides(currentIndex, fadeOut);
 
     return (

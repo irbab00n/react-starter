@@ -197,7 +197,12 @@ $main-track-max-width: 980px;
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
+  .main-track {
+    @include order(1);
+  }
+  
   .side-track {
+    @include order(2);
     min-width: $side-track-expanded-width;
     max-width: $side-track-expanded-width;
 
