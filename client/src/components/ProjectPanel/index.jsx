@@ -40,7 +40,7 @@ export default class ProjectPanel extends React.Component {
         this.setState({
           isPortrait: !this.state.isPortrait
         });
-        console.log("onorientationchange");
+        // console.log("onorientationchange");
       }, false);
     }
     // } else if ('onresize' in window) {

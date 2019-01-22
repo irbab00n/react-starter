@@ -15,10 +15,7 @@
 @import "components/projects-list-item";
 @import "components/skill-carousel";
 
-/* LAYOUTS SASS FILES */
-@import "layouts/blog-page-layout";
-@import "layouts/main-page-layout";
-@import "layouts/projects-page-layout";
-
 /* VIEWS SASS FILES */
-@import "views/home";
+@import "views/blog-page-layout";
+@import "views/main-page-layout";
+@import "views/projects-page-layout";

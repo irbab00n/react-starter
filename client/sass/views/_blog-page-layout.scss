@@ -1,0 +1,64 @@
+/* MAIN PAGE LAYOUT VALUES */
+/**
+ * These values must be the same as the "$navbar-height" values found within:
+ * 
+ *    /client/sass/components/_jumbotron.scss
+ * 
+ */
+ $blog-layout-navbar-margin-full: 80px; 
+ $blog-layout-navbar-margin-2560: 70px;
+ $blog-layout-navbar-margin-1920: 60px;
+ $blog-layout-navbar-margin: 50px;
+
+.blog-page-layout {
+  @include flex; @include flex-column;
+  @include box-size-border-box;
+  width: 100%;
+  margin: $blog-layout-navbar-margin-full auto 0 auto;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 2560px) {
+  .blog-page-layout {
+    margin: $blog-layout-navbar-margin-2560 auto 0 auto;
+  }
+}
+
+/* 1920 x 1080 support */
+@media (max-width: 1920px) {
+  .blog-page-layout {
+    margin: $blog-layout-navbar-margin-1920 auto 0 auto;
+  }
+}
+
+/* 1440 x 900 support */
+@media (max-width: 1440px) {
+  .blog-page-layout {
+    margin: $blog-layout-navbar-margin auto 0 auto;
+  }
+}
+
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+  
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+  
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
+
+}

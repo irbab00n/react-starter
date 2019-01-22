@@ -9,10 +9,38 @@ export default class SkillCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      shouldRerender: false,
       index: 0
     }
     this.calculateXTranslate = this.calculateXTranslate.bind(this);
     this.updateCarouselIndex = this.updateCarouselIndex.bind(this);
+  }
+
+  componentDidMount() {
+    if ('onresize' in window) {
+      window.addEventListener("resize", () => {
+        // console.log("resizing");
+        this.setState({
+          shouldRerender: true
+        });
+      }, false);
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { shouldRerender } = nextState;
+    var updatedState = {};
+
+    if (shouldRerender) {
+      console.log('shouldRerender flag was set to true');
+      updatedState.shouldRerender = false;
+    }
+
+    if (Object.keys(updatedState).length > 0) {
+      this.setState(updatedState);
+    }
+
+    return true;
   }
 
  /**
@@ -37,10 +65,14 @@ export default class SkillCarousel extends React.Component {
     const { skills } = this.props;
     var isPortrait = window.innerHeight > window.innerWidth;
 
+    console.log('rendering skills carousel');
+
     let sizeDivision = 3; // default is 3
 
     isMobile ? sizeDivision = 2 : null;
     isMobile && isPortrait ? sizeDivision = 1 : null;
+
+    console.log('current size division: ', sizeDivision);
 
     let classList = `skill-carousel-container`;
 
