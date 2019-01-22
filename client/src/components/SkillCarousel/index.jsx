@@ -1,4 +1,5 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import SkillCard from './SkillCard';
 import Control from './Control';
@@ -30,13 +31,15 @@ export default class SkillCarousel extends React.Component {
 
   renderSkillsCarousel(index) {
     const { skills } = this.props;
-    // let { isMobile, isPortrait } = this.props;
+    var isPortrait = window.innerHeight > window.innerWidth;
 
-    let contentHeight = 'half'; // default is half content height
     let sizeDivision = 3; // default is 3
 
-    // isMobile ? (contentHeight = 'full', sizeDivision = 2) : null;
-    // isPortrait ? (contentHeight = 'half', sizeDivision = 1) : null;
+    console.log('is mobile? ', isMobile);
+    console.log('is portrait? ', isPortrait);
+
+    isMobile ? sizeDivision = 2 : null;
+    isPortrait ? sizeDivision = 1 : null;
 
     let classList = `skill-carousel-container`;
 
@@ -49,8 +52,8 @@ export default class SkillCarousel extends React.Component {
           skills.map((skill, index) => {
             return (
               <SkillCard 
-                // isMobile={isMobile}
-                // isPortrait={isPortrait}
+                isMobile={isMobile}
+                isPortrait={isPortrait}
                 key={`skill-${index}`}
                 skill={skill}
               />
@@ -71,12 +74,12 @@ export default class SkillCarousel extends React.Component {
     e.preventDefault();
     const { skills } = this.props;
     let { index } = this.state;
-    // let { isMobile, isPortrait } = this.props;
+    let isPortrait = window.innerHeight > window.innerWidth;
 
     let limitValue = 3;
 
-    // isMobile ? limitValue = 2 : null; // only allows 2 tiles in mobile landscape
-    // isPortrait ? limitValue = 1 : null; // only allows 1 tile in mobile portrait
+    isMobile ? limitValue = 2 : null; // only allows 2 tiles in mobile landscape
+    isPortrait ? limitValue = 1 : null; // only allows 1 tile in mobile portrait
 
     switch (update) {
       case 'inc':

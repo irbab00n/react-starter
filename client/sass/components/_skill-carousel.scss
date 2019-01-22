@@ -64,6 +64,14 @@ $skill-card-description-margin: 0px;
     }
 
   }
+
+  &.mobile-landscape {
+    min-width: calc(100% / 2);
+  }
+
+  &.mobile-portrait {
+    min-width: 100%;
+  }
 }
 
 .skill-card-title {

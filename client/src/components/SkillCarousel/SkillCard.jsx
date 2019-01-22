@@ -7,10 +7,11 @@ export default class SkillCard extends React.Component {
 
   render() {
 
-    let { description, image, title } = this.props.skill;
+    var { isMobile, isPortrait } = this.props;
+    var { description, image, title } = this.props.skill;
 
     return (
-      <div className={`skill-card`}>
+      <div className={`skill-card ${isMobile ? 'mobile-landscape' : ''} ${isPortrait ? 'mobile-portrait' : ''}`}>
         <h2 className="skill-card-title no-select">{title}</h2>
         <img src={image} className="skill-card-image"/>
         <center className="skill-card-description">
