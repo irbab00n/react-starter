@@ -35,9 +35,6 @@ export default class SkillCarousel extends React.Component {
 
     let sizeDivision = 3; // default is 3
 
-    console.log('is mobile? ', isMobile);
-    console.log('is portrait? ', isPortrait);
-
     isMobile ? sizeDivision = 2 : null;
     isPortrait ? sizeDivision = 1 : null;
 

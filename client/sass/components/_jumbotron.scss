@@ -30,38 +30,65 @@ $jumbotron-slide-title-h1-size-full: 72px;
 $jumbotron-slide-title-h1-size-2560: 64px;
 $jumbotron-slide-title-h1-size-1920: 56px;
 $jumbotron-slide-title-h1-size: 48px;
+$jumbotron-slide-title-h1-size-mobile: 28px;
+$jumbotron-slide-title-h1-size-mobile-small: 24px;
 $jumbotron-slide-title-h1-margin-full: 48px;
 $jumbotron-slide-title-h1-margin-2560: 42px;
 $jumbotron-slide-title-h1-margin-1920: 36px;
 $jumbotron-slide-title-h1-margin: 32px;
+$jumbotron-slide-title-h1-margin-mobile: 10px;
 /* -- H2 TITLE VALUES */
 $jumbotron-slide-title-h2-size-full: 60px;
 $jumbotron-slide-title-h2-size-2560: 54px;
 $jumbotron-slide-title-h2-size-1920: 48px;
 $jumbotron-slide-title-h2-size: 40px;
+$jumbotron-slide-title-h2-size-mobile: 24px;
+$jumbotron-slide-title-h2-size-mobile-small: 20px;
 $jumbotron-slide-title-h2-margin-full: 42px;
 $jumbotron-slide-title-h2-margin-2560: 36px;
 $jumbotron-slide-title-h2-margin-1920: 32px;
 $jumbotron-slide-title-h2-margin: 28px;
+$jumbotron-slide-title-h2-margin-mobile: 8px;
 /* -- H3 TITLE VALUES */
 $jumbotron-slide-title-h3-size-full: 48px;
 $jumbotron-slide-title-h3-size-2560: 42px;
 $jumbotron-slide-title-h3-size-1920: 36px;
 $jumbotron-slide-title-h3-size: 32px;
+$jumbotron-slide-title-h3-size-mobile: 20px;
+$jumbotron-slide-title-h3-size-mobile-small: 18px;
 $jumbotron-slide-title-h3-margin-full: 36px;
 $jumbotron-slide-title-h3-margin-2560: 32px;
 $jumbotron-slide-title-h3-margin-1920: 28px;
 $jumbotron-slide-title-h3-margin: 24px;
+$jumbotron-slide-title-h3-margin-mobile: 6px;
 /* -- H4 TITLE VALUES */
 $jumbotron-slide-title-h4-size-full: 36px;
 $jumbotron-slide-title-h4-size-2560: 32px;
 $jumbotron-slide-title-h4-size-1920: 28px;
 $jumbotron-slide-title-h4-size: 24px;
+$jumbotron-slide-title-h4-size-mobile: 18px;
+$jumbotron-slide-title-h4-size-mobile-small: 16px;
 $jumbotron-slide-title-h4-margin-full: 30px;
 $jumbotron-slide-title-h4-margin-2560: 26px;
 $jumbotron-slide-title-h4-margin-1920: 24px;
 $jumbotron-slide-title-h4-margin: 20px;
+$jumbotron-slide-title-h4-margin-mobile: 5px;
 
+/* JUMBOTRON BUTTON VALUES */
+$jumbotron-slide-button-height-full: 72px;
+$jumbotron-slide-button-height-2560: 60px;
+$jumbotron-slide-button-height-1920: 54px;
+$jumbotron-slide-button-height: 48px;
+$jumbotron-slide-button-margin-full: 60px;
+$jumbotron-slide-button-margin-2560: 56px;
+$jumbotron-slide-button-margin-1920: 48px;
+$jumbotron-slide-button-margin: 40px;
+$jumbotron-slide-button-margin-mobile: 20px;
+$jumbotron-slide-button-margin-mobile-small: 10px;
+$jumbotron-slide-button-min-width-full: 200px;
+$jumbotron-slide-button-min-width-2560: 140px;
+$jumbotron-slide-button-min-width-1920: 120px;
+$jumbotron-slide-button-min-width: 100px;
 
 /* JUMBOTRON SLIDE SELECTOR VALUES */
 $jumbotron-slide-selector-height-full: 24px;
@@ -181,7 +208,7 @@ $jumbotron-slide-selector-margin: 12px;
 /* JUMBOTRON SLIDE BUTTONS */
 .jumbotron-slide-container > a {
   text-decoration: none;
-  margin-right: 40px;
+  margin-right: $jumbotron-slide-button-height-full;
 
   &:last-child {
     margin-right: 0px;
@@ -196,9 +223,8 @@ $jumbotron-slide-selector-margin: 12px;
   border-radius: 4px; border-color: rgba(0, 0, 0, 0.0);
   color: $blue-grey-900;
   font-size: 14px;
-  height: 48px; min-width: 100px;
+  height: $jumbotron-slide-button-height-full; min-width: $jumbotron-slide-button-min-width-full;
   padding: 0 15px;
-  margin-right: 40px;
 
   &.large-font {
     font-size: 24px; font-weight: 600;
@@ -293,6 +319,13 @@ $jumbotron-slide-selector-margin: 12px;
     height: $jumbotron-slide-selector-height-2560; width: $jumbotron-slide-selector-height-2560;
     margin-right: $jumbotron-slide-selector-margin-2560;
   }
+  /* -- JUMBOTRON SLIDE BUTTON */
+  .jumbotron-slide-container > a {
+    margin-right: $jumbotron-slide-button-margin-2560;
+  }
+  .jumbotron-slide-container > a > button {
+    height: $jumbotron-slide-button-height-2560; min-width: $jumbotron-slide-button-min-width-2560;
+  }
 }
 
 /* 1920 x 1080 support */
@@ -307,7 +340,6 @@ $jumbotron-slide-selector-margin: 12px;
   .jumbotron-inner-wrapper > .bottom-container {
     height: $jumbotron-inner-wrapper-bottom-container-height-1920;
   }
-
 
   /* JUMBOTRON SLIDE */
   /* -- JUMBOTRON SLIDE WRAPPER */
@@ -331,10 +363,17 @@ $jumbotron-slide-selector-margin: 12px;
     font-size: $jumbotron-slide-title-h4-size-1920;
     margin: $jumbotron-slide-title-h4-margin-1920 0;
   }
-  /* JUMBOTRON SLIDE SELECTORS */
+  /* -- JUMBOTRON SLIDE SELECTORS */
   .slide-selector-wrapper > ul > li {
     height: $jumbotron-slide-selector-height-1920; width: $jumbotron-slide-selector-height-1920;
     margin-right: $jumbotron-slide-selector-margin-1920;
+  }
+  /* -- JUMBOTRON SLIDE BUTTON */
+  .jumbotron-slide-container > a {
+    margin-right: $jumbotron-slide-button-margin-1920;
+  }
+  .jumbotron-slide-container > a > button {
+    height: $jumbotron-slide-button-height-1920; min-width: $jumbotron-slide-button-min-width-1920;
   }
 }
 
@@ -378,6 +417,13 @@ $jumbotron-slide-selector-margin: 12px;
     height: $jumbotron-slide-selector-height; width: $jumbotron-slide-selector-height;
     margin-right: $jumbotron-slide-selector-margin;
   }
+  /* -- JUMBOTRON SLIDE BUTTON */
+  .jumbotron-slide-container > a {
+    margin-right: $jumbotron-slide-button-margin;
+  }
+  .jumbotron-slide-container > a > button {
+    height: $jumbotron-slide-button-height; min-width: $jumbotron-slide-button-min-width;
+  }
 }
 
 /* Viewport, right after iPad */
@@ -397,10 +443,69 @@ $jumbotron-slide-selector-margin: 12px;
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
-  
+  /* -- JUMBOTRON SLIDE TITLES */
+  .jumbotron-slide-wrapper > h1 {
+    font-size: $jumbotron-slide-title-h1-size-mobile;
+    margin: $jumbotron-slide-title-h1-margin-mobile 0;
+  }
+  .jumbotron-slide-wrapper > h2 {
+    font-size: $jumbotron-slide-title-h2-size-mobile;
+    margin: $jumbotron-slide-title-h2-margin-1920 0;
+  }
+  .jumbotron-slide-wrapper > h3 {
+    font-size: $jumbotron-slide-title-h3-size-mobile;
+    margin: $jumbotron-slide-title-h3-margin-1920 0;
+  }
+  .jumbotron-slide-wrapper > h4 {
+    font-size: $jumbotron-slide-title-h4-size-mobile;
+    margin: $jumbotron-slide-title-h4-margin-1920 0;
+  }
+  /* -- JUMBOTRON SLIDE BUTTON */
+  .jumbotron-slide-container > a {
+    margin-right: $jumbotron-slide-button-margin-mobile;
+  }
+  .jumbotron-slide-container > a > button {
+    height: $jumbotron-slide-button-height; min-width: $jumbotron-slide-button-min-width;
+    & > img {
+      opacity: 0.8;
+      max-width: 75px;
+    }
+  }
 }
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
+  /* -- JUMBOTRON SLIDE TITLES */
+  .jumbotron-slide-wrapper > h1 {
+    font-size: $jumbotron-slide-title-h1-size-mobile-small;
+    margin: $jumbotron-slide-title-h1-margin-mobile 0;
+  }
+  .jumbotron-slide-wrapper > h2 {
+    font-size: $jumbotron-slide-title-h2-size-mobile-small;
+    margin: $jumbotron-slide-title-h2-margin-1920 0;
+  }
+  .jumbotron-slide-wrapper > h3 {
+    font-size: $jumbotron-slide-title-h3-size-mobile-small;
+    margin: $jumbotron-slide-title-h3-margin-1920 0;
+  }
+  .jumbotron-slide-wrapper > h4 {
+    font-size: $jumbotron-slide-title-h4-size-mobile-small;
+    margin: $jumbotron-slide-title-h4-margin-1920 0;
+  }
+  /* -- JUMBOTRON SLIDE BUTTON */
+  .jumbotron-slide-container > a {
+    margin-right: $jumbotron-slide-button-margin-mobile-small;
+  }
+  .jumbotron-slide-container > a > button {
+    height: $jumbotron-slide-button-height; min-width: $jumbotron-slide-button-min-width;
 
+    &.large-font {
+      font-size: 14px;
+    }
+
+    & > img {
+      opacity: 0.8;
+      max-width: 75px;
+    }
+  }
 }
