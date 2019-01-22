@@ -1,19 +1,49 @@
+/* SKILL CAROUSEL HEIGHT VALUES */
+$skill-carousel-height-full: 1000px;
+$skill-carousel-height-2560: 700px;
+$skill-carousel-height-1920: 575px;
 $skill-carousel-height: 450px;
+
+/* SKILL CARD TITLE VALUES */
+$skill-card-title-size-full: 48px;
+$skill-card-title-size-2560: 40px;
+$skill-card-title-size-1920: 32px;
+$skill-card-title-size: 24px;
+
+/* SKILL CARD IMAGE VALUES */
+$skill-card-image-size-full: 250px;
+$skill-card-image-size-full-hovered: 270px;
+$skill-card-image-size-2560: 170px;
+$skill-card-image-size-2560-hovered: 185px;
+$skill-card-image-size-1920: 130px;
+$skill-card-image-size-1920-hovered: 142px;
+$skill-card-image-size: 100px;
+$skill-card-image-size-hovered: 110px;
+
+/* SKILL CARD DESCRIPTION VALUES */
+$skill-card-description-size-full: 32px;
+$skill-card-description-size-2560: 24px;
+$skill-card-description-size-1920: 18px;
+$skill-card-description-size: 16px;
+$skill-card-description-margin-full: 24px;
+$skill-card-description-margin-2560: 12px;
+$skill-card-description-margin-1920: 6px;
+$skill-card-description-margin: 0px;
+
 
 .skill-carousel-wrapper {
   @include flex; @include flex-column;
   // border-bottom: 1px solid rgba(150, 158, 174, 0.6);
   overflow: hidden;
   @include box-shadow(0px, $navbar-shadow-veritical, $navbar-shadow-blur, 0px, $navbar-shadow-color);
-  height: $skill-carousel-height; width: 100%;
+  height: $skill-carousel-height-full; width: 100%;
 }
 
 .skill-carousel-container {
   @include flex;
   @include transition(0.2s);
-  
   @include box-size-border-box;
-  height: $skill-carousel-height; width: 100%;
+  height: $skill-carousel-height-full; width: 100%;
 }
 
 .skill-card {
@@ -24,26 +54,26 @@ $skill-carousel-height: 450px;
   color: $blue-grey-900;
   justify-content: space-evenly;
   min-width: calc(100% / 3);
-  height: $skill-carousel-height;
+  height: $skill-carousel-height-full;
 
   &:hover {
     background-color: $blue-grey-50;
 
     .skill-card-image {
-      height: 110px;
+      height: $skill-card-image-size-full-hovered;
     }
 
   }
 }
 
 .skill-card-title {
-  font-size: 24px;
+  font-size: $skill-card-title-size-full;
   margin: 0;
 }
 
 .skill-card-image {
   @include transition(0.2s);
-  height: 100px;
+  height: $skill-card-image-size-full;
   margin: 2% 0;
   -webkit-filter: drop-shadow(4px 4px 4px rgba(50, 50, 50, 0.6));
   filter: drop-shadow(4px 4px 4px rgba(50, 50, 50, 0.6));
@@ -53,8 +83,12 @@ $skill-carousel-height: 450px;
   @include flex;
   @include flex-column;
   @include align-center;
-  font-size: 16px;
+  font-size: $skill-card-description-size-full;
   font-weight: 500;
+
+  & > * {
+    margin-top: $skill-card-description-margin-full;
+  }
 }
 
 /* 
@@ -80,7 +114,7 @@ $skill-carousel-height: 450px;
   font-size: 32px;
   opacity: 0.4;
   pointer-events: auto;
-  height: $skill-carousel-height; width: 100px;
+  height: $skill-carousel-height-full; width: 100px;
   z-index: 1;
 
   &:hover {
@@ -105,4 +139,152 @@ $skill-carousel-height: 450px;
   &:hover {
     text-shadow: 3px 3px 4px rgba(50, 50, 50, 0.6);
   }
+}
+
+
+/* RESPONSIVE STYLES */
+/* -- 2560 x 1400 Support */
+@media (max-width: 2560px) {
+  .skill-carousel-wrapper {
+    height: $skill-carousel-height-2560;
+  }
+
+  .skill-carousel-container {
+    height: $skill-carousel-height-2560;
+  }
+
+  .skill-card {
+    height: $skill-carousel-height-2560;
+
+    &:hover {
+      .skill-card-image {
+        height: $skill-card-image-size-2560-hovered;
+      }
+    }
+  }
+
+  .skill-card-title {
+    font-size: $skill-card-title-size-2560;
+  }
+
+  .skill-card-image {
+    height: $skill-card-image-size-2560;
+  }
+
+  .skill-card-description {
+    font-size: $skill-card-description-size-2560;
+
+    & > * {
+      margin-top: $skill-card-description-margin-2560;
+    }
+  }
+
+  .control {
+    height: $skill-carousel-height-2560;
+  }
+}
+
+/* 1920 x 1080 support */
+@media (max-width: 1920px) {
+  .skill-carousel-wrapper {
+    height: $skill-carousel-height-1920;
+  }
+
+  .skill-carousel-container {
+    height: $skill-carousel-height-1920;
+  }
+
+  .skill-card {
+    height: $skill-carousel-height-1920;
+    &:hover {
+      .skill-card-image {
+        height: $skill-card-image-size-1920-hovered;
+      }
+    }
+  }
+
+  .skill-card-title {
+    font-size: $skill-card-title-size-1920;
+  }
+
+  .skill-card-image {
+    height: $skill-card-image-size-1920;
+  }
+
+  .skill-card-description {
+    font-size: $skill-card-description-size-1920;
+
+    & > * {
+      margin-top: $skill-card-description-margin-1920;
+    }
+  }
+  
+  .control {
+    height: $skill-carousel-height-1920;
+  }
+}
+
+/* 1440 x 900 support */
+@media (max-width: 1440px) {
+  .skill-carousel-wrapper {
+    height: $skill-carousel-height;
+  }
+
+  .skill-carousel-container {
+    height: $skill-carousel-height;
+  }
+
+  .skill-card {
+    height: $skill-carousel-height;
+    &:hover {
+      .skill-card-image {
+        height: $skill-card-image-size-hovered;
+      }
+    }
+  }
+
+  .skill-card-title {
+    font-size: $skill-card-title-size;
+  }
+
+  .skill-card-image {
+    height: $skill-card-image-size;
+  }
+
+  .skill-card-description {
+    font-size: $skill-card-description-size;
+
+    & > * {
+      margin-top: $skill-card-description-margin;
+    }
+  }
+
+  .control {
+    height: $skill-carousel-height;
+  }
+}
+
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
+
 }

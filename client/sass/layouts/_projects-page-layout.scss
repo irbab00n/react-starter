@@ -1,3 +1,16 @@
+/* MAIN PAGE LAYOUT VALUES */
+/**
+ * These values must be the same as the "$navbar-height" values found within:
+ * 
+ *    /client/sass/components/_navbar.scss
+ * 
+ */
+$projects-layout-navbar-padding-full: 80px; 
+$projects-layout-navbar-padding-2560: 70px;
+$projects-layout-navbar-padding-1920: 60px;
+$projects-layout-navbar-padding: 50px;
+
+
 $side-track-collapsed-width: 0px;
 $side-track-expanded-width-full: 600px;
 $side-track-expanded-width-2560: 480px;
@@ -9,7 +22,7 @@ $main-track-max-width: 980px;
 .projects-page-layout {
   @include flex;
   @include box-size-border-box;
-  margin: $navbar-height auto 0 auto;
+  margin: $projects-layout-navbar-padding-full auto 0 auto;
   width: 100%;
 }
 
@@ -66,6 +79,10 @@ $main-track-max-width: 980px;
 }
 
 @media (max-width: 2560px) {
+  .projects-page-layout {
+    margin-top: $projects-layout-navbar-padding-2560;
+  }
+
   .main-track {
     margin-left: $side-track-expanded-width-2560;
     width: calc(100% - #{$side-track-expanded-width-2560});
@@ -82,6 +99,10 @@ $main-track-max-width: 980px;
 }
 
 @media (max-width: 1920px) {
+  .projects-page-layout {
+    margin-top: $projects-layout-navbar-padding-1920;
+  }
+
   .main-track {
     margin-left: $side-track-expanded-width-1920;
     width: calc(100% - #{$side-track-expanded-width-1920});
@@ -101,6 +122,7 @@ $main-track-max-width: 980px;
 @media (max-width: 1440px) {
   .projects-page-layout {
     @include flex-column;
+    margin-top: $projects-layout-navbar-padding;
   }
 
   .side-track {
@@ -120,6 +142,7 @@ $main-track-max-width: 980px;
   }
 
   .main-track {
+    margin-top: $projects-layout-navbar-padding;
     background-color: $blue-grey-50;
     width: 100%;
     margin: 0 auto;
