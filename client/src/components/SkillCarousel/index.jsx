@@ -15,13 +15,11 @@ export default class SkillCarousel extends React.Component {
     this.updateCarouselIndex = this.updateCarouselIndex.bind(this);
   }
 
-  /* calculateXTranslate info --
-    Params:
-      index <Number>: Used to calcuate the number of % sections to shift by
-    Purpose:
-      Uses the index as a multiplier for how many card-sized sections to translate the slider by
-      index = 3 => transform = 100%
-      index = 1 => transform = 33.3333%
+ /**
+  * Produces a style object with the required next transform percentage 
+  * @param {Number} index - Represents current item selected from list
+  * @param {Number} sizeDivision - Ratio for calculating final transform percent
+  * @returns {Object} - Style object containing calculated x-transform
   */
   calculateXTranslate(index, sizeDivision) {
     let cardSize = 100 / sizeDivision;
@@ -29,6 +27,12 @@ export default class SkillCarousel extends React.Component {
     return {transform: `translateX(${-transformPercent}%)`};
   }
 
+  /**
+   * Checks for mobile flags, calculates x-transform 
+   * and composes skill carousel container
+   * @param {*} index - Represents current item selected from list
+   * @returns {JSX Element} - Skill Cards mapped from skill data, composed in wrapper container
+   */
   renderSkillsCarousel(index) {
     const { skills } = this.props;
     var isPortrait = window.innerHeight > window.innerWidth;
@@ -36,7 +40,7 @@ export default class SkillCarousel extends React.Component {
     let sizeDivision = 3; // default is 3
 
     isMobile ? sizeDivision = 2 : null;
-    isPortrait ? sizeDivision = 1 : null;
+    isMobile && isPortrait ? sizeDivision = 1 : null;
 
     let classList = `skill-carousel-container`;
 
@@ -61,11 +65,10 @@ export default class SkillCarousel extends React.Component {
     );
   }
 
-  /* updateCarouselIndex info --
-    Params:
-      update <String>: A command used to determine how to mutate the index in state
-    Purpose:
-      create a central updating function responsible for either increasing or decreasing the index
+ /**
+  * Uses update flag to change how index updates in state
+  * @param {*} e - Used for preventDefault
+  * @param {*} update - Flag specifying how to update the index in state
   */
   updateCarouselIndex(e, update) {
     e.preventDefault();
@@ -95,8 +98,8 @@ export default class SkillCarousel extends React.Component {
         // if neither command was supplied, do nothing
         console.log(`updateCarouselIndex ran, but didn't receive a valid update command as its input`);
         break;
-      }
     }
+  }
 
   render() {
     const { index } = this.state;
