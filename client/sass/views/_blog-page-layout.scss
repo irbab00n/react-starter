@@ -5,35 +5,123 @@
  *    /client/sass/components/_jumbotron.scss
  * 
  */
- $blog-layout-navbar-margin-full: 80px; 
- $blog-layout-navbar-margin-2560: 70px;
- $blog-layout-navbar-margin-1920: 60px;
- $blog-layout-navbar-margin: 50px;
+$blog-layout-navbar-margin-full: 80px; 
+$blog-layout-navbar-margin-2560: 70px;
+$blog-layout-navbar-margin-1920: 60px;
+$blog-layout-navbar-margin: 50px;
 
-.blog-page-layout {
+$blog-page-inner-wrapper-max-width: 1100px; 
+
+$blog-meta-wrapper-height: 100px;
+
+$blog-main-track-width: 780px;
+$blog-main-track-margin: 6px;
+$blog-main-track-image-width: 768px;
+
+$blog-side-track-width: 300px;
+$blog-side-track-margin: 320px;
+
+$blog-bottom-spacer-height: 75px;
+
+/* BLOG VIEW WRAPPER */
+.blog-view-wrapper {
   @include flex; @include flex-column;
   @include box-size-border-box;
   width: 100%;
   margin: $blog-layout-navbar-margin-full auto 0 auto;
 }
 
+/* BLOG VIEW INNER WRAPPER */
+.blog-view-wrapper > .inner-wrapper {
+  @include box-size-border-box;
+  max-width: $blog-page-inner-wrapper-max-width; width: 100%;
+  margin: 0 auto;
+}
+
+/* BLOG TITLE WRAPPER */
+.blog-title-wrapper {
+  // background-color: $blue-grey-200;
+  width: 100%;
+
+  & > * {
+    color: $blue-grey-900;
+  }
+
+  & > h1 {
+    font-size: 56px;
+  }
+  & > h2 {
+    font-size: 48px;
+  }
+  & > h3 {
+    font-size: 40px;
+  }
+  & > h4 {
+    font-size: 32px;
+  }
+}
+
+/* BLOG META WRAPPER */
+.blog-meta-wrapper {
+  @include flex; @include align-center; @include justify-between;
+  // background-color: $blue-grey-300;
+  height: $blog-meta-wrapper-height; width: 100%;
+}
+
+/* BLOG CONTENT WRAPPER */
+.blog-content-wrapper {
+  @include flex; @include flex-wrap(no-wrap);
+  position: relative;
+}
+
+/* BLOG MAIN TRACK */
+#blog-main-track {
+  // background-color: $blue-grey-500;
+  margin-right: 0;
+  width: $blog-main-track-width;
+}
+/* BLOG MAIN TRACK IMAGE CONTAINER */
+#blog-main-track > figure {
+  width: $blog-main-track-image-width;
+  margin: 0 $blog-main-track-margin;
+}
+/* BLOG MAIN TRACK IMAGE */
+#blog-main-track > figure > img {
+  width: $blog-main-track-image-width;
+}
+
+/* BLOG SIDE TRACK */
+#blog-side-track {
+  background-color: $blue-grey-600;
+  margin-left: $blog-main-track-margin;
+  width: $blog-side-track-width;
+  height: 500px;
+  position: absolute;
+  right: 0;
+}
+
+/* BLOG BOTTOM SPACER */
+.blog-bottom-spacer {
+  height: $blog-bottom-spacer-height; width: 100%;
+}
+
 /* RESPONSIVE STYLES */
 @media (max-width: 2560px) {
-  .blog-page-layout {
+  .blog-view-wrapper {
     margin: $blog-layout-navbar-margin-2560 auto 0 auto;
   }
 }
 
 /* 1920 x 1080 support */
 @media (max-width: 1920px) {
-  .blog-page-layout {
+  .blog-view-wrapper {
     margin: $blog-layout-navbar-margin-1920 auto 0 auto;
   }
 }
 
 /* 1440 x 900 support */
 @media (max-width: 1440px) {
-  .blog-page-layout {
+  .blog-view-wrapper {
     margin: $blog-layout-navbar-margin auto 0 auto;
   }
 }

@@ -32,7 +32,7 @@ export default class SkillCarousel extends React.Component {
     var updatedState = {};
 
     if (shouldRerender) {
-      console.log('shouldRerender flag was set to true');
+      // console.log('shouldRerender flag was set to true');
       updatedState.shouldRerender = false;
     }
 
@@ -50,8 +50,8 @@ export default class SkillCarousel extends React.Component {
   * @returns {Object} - Style object containing calculated x-transform
   */
   calculateXTranslate(index, sizeDivision) {
-    let cardSize = 100 / sizeDivision;
-    let transformPercent = cardSize * index;
+    var cardSize = 100 / sizeDivision;
+    var transformPercent = cardSize * index;
     return {transform: `translateX(${-transformPercent}%)`};
   }
 
@@ -62,19 +62,17 @@ export default class SkillCarousel extends React.Component {
    * @returns {JSX Element} - Skill Cards mapped from skill data, composed in wrapper container
    */
   renderSkillsCarousel(index) {
-    const { skills } = this.props;
+    var { skills } = this.props;
     var isPortrait = window.innerHeight > window.innerWidth;
 
-    console.log('rendering skills carousel');
+    // console.log('rendering skills carousel');
 
-    let sizeDivision = 3; // default is 3
+    var sizeDivision = 3; // default is 3
 
     isMobile ? sizeDivision = 2 : null;
     isMobile && isPortrait ? sizeDivision = 1 : null;
 
-    console.log('current size division: ', sizeDivision);
-
-    let classList = `skill-carousel-container`;
+    var classList = `skill-carousel-container`;
 
     return (
       <div 
@@ -104,11 +102,11 @@ export default class SkillCarousel extends React.Component {
   */
   updateCarouselIndex(e, update) {
     e.preventDefault();
-    const { skills } = this.props;
-    let { index } = this.state;
-    let isPortrait = window.innerHeight > window.innerWidth;
+    var { skills } = this.props;
+    var { index } = this.state;
+    var isPortrait = window.innerHeight > window.innerWidth;
 
-    let limitValue = 3;
+    var limitValue = 3;
 
     isMobile ? limitValue = 2 : null; // only allows 2 tiles in mobile landscape
     isPortrait ? limitValue = 1 : null; // only allows 1 tile in mobile portrait

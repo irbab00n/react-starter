@@ -29,17 +29,34 @@ export default class BlogPost extends Component {
     if (this.state.loaded) {
       const post = this.state.post;
 
-      return (
-        <div>
-          <Helmet>
-            <title>{post.seo_title}</title>
-            <meta name="description" content={post.meta_description} />
-            <meta name="og:image" content={post.featured_image} />
-          </Helmet>
+      console.log('post object: ', post);
 
-          <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{__html: post.body}} />
-        </div>
+      return (
+        <section id="blog-list" className="blog-view-wrapper">
+
+          <div id="blog-title" className="inner-wrapper blog-title-wrapper">
+            <Helmet>
+              <title>{post.seo_title}</title>
+              <meta name="description" content={post.meta_description} />
+              <meta name="og:image" content={post.featured_image} />
+            </Helmet>
+            <h1>{post.title}</h1>
+          </div>
+
+          <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
+            <div>Meta Title Block</div>
+            <div>Social Share Block</div>
+          </div>
+
+          <div id="blog-content" className="inner-wrapper blog-content-wrapper">
+            <div id="blog-main-track"
+              dangerouslySetInnerHTML={{__html: post.body}}
+            />
+            <div id="blog-side-track">Side Track</div>
+          </div>
+
+          <div className="blog-bottom-spacer"/>
+        </section>
       );
     } else {
       return (

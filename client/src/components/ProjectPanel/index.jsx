@@ -25,7 +25,6 @@ export default class ProjectPanel extends React.Component {
     super(props);
     this.state = {
       isPortrait: window.innerHeight > window.innerWidth,
-      rerender: false,
       showContent: false
     };
     this.buildContributorList = this.buildContributorList.bind(this);
@@ -43,14 +42,13 @@ export default class ProjectPanel extends React.Component {
         // console.log("onorientationchange");
       }, false);
     }
-    // } else if ('onresize' in window) {
-    //     window.addEventListener("resize", () => {
-    //       this.setState({
-    //         isPortrait: !this.state.isPortrait
-    //       });
-    //       console.log("resize");
-    //     }, false);
-    // }
+    
+    if ('onresize' in window) {
+        window.addEventListener("resize", () => {
+          this.forceUpdate();
+          console.log("resize");
+        }, false);
+    }
 
     setTimeout(() => {
       this.setState({showContent: true});
@@ -123,10 +121,11 @@ export default class ProjectPanel extends React.Component {
 
   renderCarousel(pictures) {
     const { isPortrait } = this.state;
-    let width = isMobile ? '680px' : '980px';
+    let width = isMobile ? '600px' : '980px';
+    window.innerWidth <= 1439 && window.innerWidth > 1024 ? width = '700px' : null;
+    window.innerWidth <= 1024 && !isMobile ? width = '540px' : null;
     window.innerWidth > 2000 ? width = '1440px' : null;
     window.innerWidth > 2560 ? width = '1920px' : null;
-    isMobile ? width = '600px' : null;
     isMobile && isPortrait ? width = '350px' : null;
 
     return (

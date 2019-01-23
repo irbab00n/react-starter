@@ -53,9 +53,9 @@
 
 /* Flex Wrap Mixins */
 
-@mixin flex-wrap-wrap {
-  -ms-flex-wrap:  wrap;
-  flex-wrap:      wrap;
+@mixin flex-wrap($wrap) {
+  -ms-flex-wrap:  $wrap;
+  flex-wrap:      $wrap;
 }
 
 /* Border Box Mixins */

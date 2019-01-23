@@ -15,7 +15,8 @@ $side-track-collapsed-width: 0px;
 $side-track-expanded-width-full: 600px;
 $side-track-expanded-width-2560: 480px;
 $side-track-expanded-width-1920: 400px;
-$side-track-expanded-width-1440: 400px;
+$side-track-expanded-width-1440: 350px;
+$side-track-expanded-width-1024: 300px;
 $side-track-expanded-width: 375px;
 
 $side-track-item-mobile-small: 350px;
@@ -129,36 +130,45 @@ $main-track-max-width: 980px;
   }
 
   .side-track {
-    @include flex;
-    background-color: $blue-grey-100;
-    position: relative;
-    height: 110px;
-    overflow-x: scroll;
-    min-width: 100%;
-
-    & > .inner-wrapper {
-      border-left: 2px solid $amber-400;
-      border-right: 2px solid $amber-400;
-      min-width: $side-track-expanded-width-1440;
-      max-width: $side-track-expanded-width-1440;
-    }
+    min-width: $side-track-expanded-width-1440;
+    max-width: $side-track-expanded-width-1440;
   }
 
   .main-track {
-    margin-top: $projects-layout-navbar-padding;
-    background-color: $blue-grey-50;
-    width: 100%;
-    margin: 0 auto;
+    margin-left: $side-track-expanded-width-1440;
+    width: calc(100% - #{$side-track-expanded-width-1440});
 
-    // & > .inner-wrapper {
-      
-    // }
+    & > .inner-wrapper {
+      max-width: 700px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .side-track {
+    min-width: $side-track-expanded-width-1024;
+    max-width: $side-track-expanded-width-1024;
+  }
+
+  .main-track {
+    margin-left: $side-track-expanded-width-1024;
+    width: calc(100% - #{$side-track-expanded-width-1024});
+
+    & > .inner-wrapper {
+      max-width: 640px;
+    }
   }
 }
 
 /* Responsive Work - Move this to individual files as we grow */
 /* Viewport, right after iPad */
 @media (max-width: 1023px) {
+  
+  .projects-page-layout {
+    @include flex-column;
+    margin-top: $projects-layout-navbar-padding;
+  }
+  
   .main-track {
     background-color: $blue-grey-50;
     width: 100%;
@@ -167,9 +177,18 @@ $main-track-max-width: 980px;
   }
 
   .side-track {
+    @include flex;
+    background-color: $blue-grey-100;
+    position: relative;
     height: 100px;
+    overflow-x: scroll;
+    min-width: 100%;
 
     & > .inner-wrapper {
+      border-left: 2px solid $amber-400;
+      border-right: 2px solid $amber-400;
+      min-width: $side-track-expanded-width-1440;
+      max-width: $side-track-expanded-width-1440;
     }
   }
 }

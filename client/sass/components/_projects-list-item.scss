@@ -73,8 +73,18 @@
     padding: 10px 20px;
   }
 
+  .list-item-split-wrapper > h4 {
+    font-size: 20px;
+  }
+
   .projects-list-item {
     height: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .list-item-split-wrapper > h4 {
+    font-size: 18px;
   }
 }
 
