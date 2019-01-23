@@ -43,6 +43,12 @@ export default class BlogPost extends Component {
             <h1>{post.title}</h1>
           </div>
 
+          {/* 
+            BLOG META BLOCK
+            SOCIAL SHARE BLOCK
+
+            Both of these blocks can find their information from the post.author prop
+          */}
           <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
             <div>Meta Title Block</div>
             <div>Social Share Block</div>
@@ -52,6 +58,8 @@ export default class BlogPost extends Component {
             <div id="blog-main-track"
               dangerouslySetInnerHTML={{__html: post.body}}
             />
+
+            {/* SIDE TRACK WILL BE MANAGED SEPERATELY */}
             <div id="blog-side-track">Side Track</div>
           </div>
 

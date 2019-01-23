@@ -40,7 +40,7 @@ $navbar-inner-wrapper-padding: 40px;
   @include transition(0.2s);
   cursor: pointer;
   color: $blue-grey-100;
-  font-size: 36px; font-weight: 500;
+  font-size: 36px; font-weight: 900;
   text-decoration: none;
 
   &:hover {
@@ -69,7 +69,7 @@ $navbar-inner-wrapper-padding: 40px;
   @include transition(0.2s);
   cursor: pointer;
   color: $blue-grey-100;
-  font-size: 24px; font-weight: 500;
+  font-size: 24px; font-weight: 600;
   text-decoration: none;
 
   &:hover {

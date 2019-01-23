@@ -1,0 +1,73 @@
+/* BLOG LIST ITEM VALUES */
+
+$blog-list-item-image-margin: 6px;
+$blog-list-item-image-width: 768px;
+
+$blog-list-item-vertical-margin: 10px;
+
+
+.blog-list-item {
+  @include flex; @include flex-column;
+  border-bottom: 2px solid $blue-grey-200;
+  padding-bottom: $blog-list-item-vertical-margin;
+  margin: $blog-list-item-vertical-margin 0;
+  text-decoration: none;
+
+  &:first-child {
+    margin: 0 0 $blog-list-item-vertical-margin 0;
+  }
+}
+
+/* RESET <a> TAG COLORS BACK TO WEBSITE DEFAULT DARK */
+.blog-list-item > * {
+  @include transition(0.2s);
+  color: $blue-grey-900;
+}
+
+.blog-list-item > .image {
+  @include transition(0.2s);
+  background-color: $grey-900 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  margin: 0 $blog-list-item-image-margin;
+  opacity: 1;
+  height: 436px; width: $blog-list-item-image-width;
+
+  &:hover {
+    @include box-shadow(1px, 1px, 4px, 0.2px, rgba(25, 25, 25, 0.8));
+    opacity: 0.8;
+  }
+}
+
+/* SHARED TITLE PROPERTIES */
+.blog-list-item > h1,h2,h3,h4 {
+  &:hover {
+    color: $amber-900;
+  }
+
+  &:active {
+    color: $blue-grey-900;
+  }
+
+  &:visted {
+    color: $indigo-500;
+  }
+}
+/* INDIVIDUAL TITLE PROPERTIES */
+.blog-list-item > h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+.blog-list-item > h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.blog-list-item > h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.blog-list-item > h4 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}

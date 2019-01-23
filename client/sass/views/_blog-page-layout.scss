@@ -12,7 +12,7 @@ $blog-layout-navbar-margin: 50px;
 
 $blog-page-inner-wrapper-max-width: 1100px; 
 
-$blog-meta-wrapper-height: 100px;
+$blog-meta-wrapper-height: 70px;
 
 $blog-main-track-width: 780px;
 $blog-main-track-margin: 6px;
@@ -44,6 +44,7 @@ $blog-bottom-spacer-height: 75px;
   width: 100%;
 
   & > * {
+    line-height: 1;
     color: $blue-grey-900;
   }
 
@@ -86,16 +87,14 @@ $blog-bottom-spacer-height: 75px;
   margin: 0 $blog-main-track-margin;
 }
 /* BLOG MAIN TRACK IMAGE */
-#blog-main-track > figure > img {
+#blog-main-track > p > img, #blog-main-track > figure > img {
   width: $blog-main-track-image-width;
 }
 
 /* BLOG SIDE TRACK */
 #blog-side-track {
-  background-color: $blue-grey-600;
   margin-left: $blog-main-track-margin;
   width: $blog-side-track-width;
-  height: 500px;
   position: absolute;
   right: 0;
 }
