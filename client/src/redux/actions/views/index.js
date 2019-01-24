@@ -1,4 +1,4 @@
-import * as blogActions from './blog_actions';
+import blogActions from './blog';
 
 const actions = Object.assign(
   {},

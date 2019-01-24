@@ -25,6 +25,7 @@ class BlogMain extends React.Component {
   componentWillMount() {
     var page = 1;
   
+    this.props.actions.fetchBlogCategories();
     this.props.actions.fetchBlogPostsByPage(page);
   }
 

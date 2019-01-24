@@ -85,7 +85,6 @@ const blogReducer = (state = new INITIAL_STATE(), action) => {
 
     // Changes the state of the posts fetched flag
     case types.SET_BLOG_POSTS_FETCHED:
-    console.log('posts fetched');
       newState.posts.fetched = action.payload.flag;
       return newState;
 

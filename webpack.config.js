@@ -13,9 +13,9 @@ const dotenv = require('dotenv');
 */ 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const _MODULES = path.join(__dirname, '/node_modules');
 const _PUBLIC = path.join(__dirname, '/public');
 const _SOURCE = path.join(__dirname, '/client/src');
-const _MODULES = path.join(__dirname, '/node_modules');
 
 const _OUTPUT_CONFIG = {
   filename: 'bundle.js',
