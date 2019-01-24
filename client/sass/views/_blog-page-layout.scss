@@ -25,6 +25,7 @@ $blog-bottom-spacer-height: 75px;
 
 /* BLOG VIEW WRAPPER */
 .blog-view-wrapper {
+  @include jumbotron-background;
   @include flex; @include flex-column;
   @include box-size-border-box;
   width: 100%;
@@ -93,10 +94,17 @@ $blog-bottom-spacer-height: 75px;
 
 /* BLOG SIDE TRACK */
 #blog-side-track {
+  background-color: $blue-grey-500;
   margin-left: $blog-main-track-margin;
-  width: $blog-side-track-width;
-  position: absolute;
-  right: 0;
+  width: $blog-side-track-width; height: 300px;
+  position: fixed;
+  right: 290px;
+
+  &.locked {
+    position: absolute;
+    right: 0px;
+  }
+  
 }
 
 /* BLOG BOTTOM SPACER */

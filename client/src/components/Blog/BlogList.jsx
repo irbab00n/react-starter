@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Butter from 'buttercms';
 
 import BlogListItem from './BlogListItem';
+import Footer from '../Footer/'
 
 const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
 
@@ -13,6 +14,7 @@ export default class BlogHome extends React.Component {
     super(props);
     this.state = {
       loaded: false,
+      lockSidebar: true,
       posts: [],
       meta: {
         next_page: null,
@@ -20,6 +22,7 @@ export default class BlogHome extends React.Component {
       }
     };
     this.fetchPosts = this.fetchPosts.bind(this);
+    this.toggleSidebarLock = this.toggleSidebarLock.bind(this);
   }
 
   componentWillMount() {
@@ -51,8 +54,14 @@ export default class BlogHome extends React.Component {
     });
   }
 
+  toggleSidebarLock() {
+    this.setState({
+      lockSidebar: !this.state.lockSidebar
+    });
+  }
+
   render() {
-    const { loaded, meta, posts } = this.state;
+    const { loaded, lockSidebar, meta, posts } = this.state;
     const { match } = this.props;
 
     const { next_page, previous_page } = meta;
@@ -66,7 +75,7 @@ export default class BlogHome extends React.Component {
           <Helmet>
             <title>cosbytes | Blog</title>
           </Helmet>
-          <h1>Welcome to by Blog</h1>
+          <h1>Welcome to my Blog</h1>
         </div>
 
         <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
@@ -89,7 +98,9 @@ export default class BlogHome extends React.Component {
               )
             })}
           </div>
-          <div id="blog-side-track">Side Track</div>
+          <div id="blog-side-track" className={`${lockSidebar ? 'locked' : ''}`}>
+              <button onClick={this.toggleSidebarLock}>Toggle</button>
+            </div>
         </div>
 
 
@@ -105,6 +116,7 @@ export default class BlogHome extends React.Component {
 
         <div className="blog-bottom-spacer"/>
 
+        <Footer />
 
       </section>
     );

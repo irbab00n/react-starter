@@ -19,8 +19,8 @@ export default class BlogListItem extends React.Component {
         <div className="image" style={{background: `url(${post.featured_image})`}}/>
         <h4>{post.title}</h4>
         <p>{post.summary}</p>
-        <div className="">
-
+        <div className="categories-wrapper">
+          
         </div>
       </Link>
     );

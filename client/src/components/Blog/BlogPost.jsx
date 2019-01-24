@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
 
+import Footer from '../Footer/'
+
 const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
 
 export default class BlogPost extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      loaded: false
+      loaded: false,
+      lockSidebar: true
     };
+    this.toggleSidebarLock = this.toggleSidebarLock.bind(this);
   }
 
   componentWillMount() {
@@ -25,7 +28,15 @@ export default class BlogPost extends Component {
     });
   }
 
+  toggleSidebarLock() {
+    this.setState({
+      lockSidebar: !this.state.lockSidebar
+    });
+  }
+
   render() {
+    const { lockSidebar } = this.state;
+
     if (this.state.loaded) {
       const post = this.state.post;
 
@@ -60,10 +71,15 @@ export default class BlogPost extends Component {
             />
 
             {/* SIDE TRACK WILL BE MANAGED SEPERATELY */}
-            <div id="blog-side-track">Side Track</div>
+            <div id="blog-side-track" className={`${lockSidebar ? 'locked' : ''}`}>
+              <button onClick={this.toggleSidebarLock}>Toggle</button>
+            </div>
           </div>
 
           <div className="blog-bottom-spacer"/>
+
+          <Footer />
+
         </section>
       );
     } else {

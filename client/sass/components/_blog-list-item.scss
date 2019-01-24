@@ -8,13 +8,14 @@ $blog-list-item-vertical-margin: 10px;
 
 .blog-list-item {
   @include flex; @include flex-column;
+  @include jumbotron-background-vert(0.0);
   border-bottom: 2px solid $blue-grey-200;
-  padding-bottom: $blog-list-item-vertical-margin;
-  margin: $blog-list-item-vertical-margin 0;
+  margin: 0;
   text-decoration: none;
 
-  &:first-child {
-    margin: 0 0 $blog-list-item-vertical-margin 0;
+  &:hover {
+    @include box-shadow(0px, 0px, 4px, 0.2px, rgba(25, 25, 25, 0.2));
+    @include jumbotron-background-vert(0.40);
   }
 }
 
@@ -22,6 +23,8 @@ $blog-list-item-vertical-margin: 10px;
 .blog-list-item > * {
   @include transition(0.2s);
   color: $blue-grey-900;
+  margin-right: $blog-list-item-image-margin;
+  margin-left: $blog-list-item-image-margin;
 }
 
 .blog-list-item > .image {
@@ -30,18 +33,21 @@ $blog-list-item-vertical-margin: 10px;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: contain !important;
-  margin: 0 $blog-list-item-image-margin;
-  opacity: 1;
+  margin: $blog-list-item-image-margin;
+  opacity: 0.8;
   height: 436px; width: $blog-list-item-image-width;
 
   &:hover {
     @include box-shadow(1px, 1px, 4px, 0.2px, rgba(25, 25, 25, 0.8));
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
 /* SHARED TITLE PROPERTIES */
 .blog-list-item > h1,h2,h3,h4 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
   &:hover {
     color: $amber-900;
   }
@@ -57,17 +63,17 @@ $blog-list-item-vertical-margin: 10px;
 /* INDIVIDUAL TITLE PROPERTIES */
 .blog-list-item > h1 {
   font-size: 56px;
-  margin-bottom: 20px;
 }
 .blog-list-item > h2 {
   font-size: 48px;
-  margin-bottom: 20px;
 }
 .blog-list-item > h3 {
   font-size: 40px;
-  margin-bottom: 20px;
 }
 .blog-list-item > h4 {
   font-size: 32px;
-  margin-bottom: 20px;
+}
+
+.blog-list-item > .categories-wrapper {
+
 }
