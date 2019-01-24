@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+/* REDUX */
+import { connect } from 'react-redux';
+import dispatchMappedActions from '../../redux/dispatchMappedActions';
+
 import { Helmet } from "react-helmet";
 import Butter from 'buttercms';
 
@@ -9,7 +13,7 @@ import Footer from '../Footer/'
 
 const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
 
-export default class BlogList extends React.Component {
+class BlogMain extends React.Component {
 
   constructor(props) {
     super(props);
@@ -68,6 +72,7 @@ export default class BlogList extends React.Component {
     const { next_page, previous_page } = meta;
 
     console.log('posts: ', posts);
+    console.log('props: ', this.props);
 
     return (
       <section id="blog-list" className="blog-view-wrapper">
@@ -130,3 +135,10 @@ export default class BlogList extends React.Component {
     );
   }
 }
+
+const ConnectedBlogMain = connect(
+  state => state,
+  dispatchMappedActions
+)(BlogMain);
+
+export default ConnectedBlogMain;

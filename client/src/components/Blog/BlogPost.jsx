@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
 
+import BlogSideTrack from './BlogSideTrack';
 import Footer from '../Footer/'
 
 const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
@@ -71,9 +72,10 @@ export default class BlogPost extends Component {
             />
 
             {/* SIDE TRACK WILL BE MANAGED SEPERATELY */}
-            <div id="blog-side-track" className={`${lockSidebar ? 'locked' : ''}`}>
-              <button onClick={this.toggleSidebarLock}>Toggle</button>
-            </div>
+            <BlogSideTrack
+              lockSidebar={lockSidebar}
+              toggleSidebarLock={this.toggleSidebarLock}
+            />
           </div>
 
           <div className="blog-bottom-spacer"/>

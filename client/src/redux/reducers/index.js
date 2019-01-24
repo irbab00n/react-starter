@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import placeholder from './placeholder';
+import views from './views';
+// import placeholder from './reducer-template';
 
 const reducers = combineReducers({
-  placeholder
+  views
 });
 
 export default reducers;

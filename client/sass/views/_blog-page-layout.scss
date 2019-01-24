@@ -19,6 +19,7 @@ $blog-main-track-margin: 6px;
 $blog-main-track-image-width: 768px;
 
 $blog-side-track-width: 300px;
+$blog-side-track-inner-wrapper-width: 288px;
 $blog-side-track-margin: 320px;
 
 $blog-bottom-spacer-height: 75px;
@@ -94,17 +95,16 @@ $blog-bottom-spacer-height: 75px;
 
 /* BLOG SIDE TRACK */
 #blog-side-track {
-  background-color: $blue-grey-500;
-  margin-left: $blog-main-track-margin;
-  width: $blog-side-track-width; height: 300px;
-  position: fixed;
-  right: 290px;
+  background-color: $blue-grey-200;
+  width: $blog-side-track-width; 
+  position: absolute;
+  right: 0;
+}
 
-  &.locked {
-    position: absolute;
-    right: 0px;
-  }
-  
+/* BLOG SIDE TRACK INNER WRAPPER */
+#blog-side-track > .inner-wrapper {
+  width: $blog-side-track-inner-wrapper-width;
+  margin: $blog-main-track-margin;
 }
 
 /* BLOG BOTTOM SPACER */
