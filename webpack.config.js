@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
+const dotenv = require('dotenv');
 /*
   NOTE:
 
@@ -47,6 +49,13 @@ const _IMAGE_RULES = {
   }
 };
 
+// EXTRACT ENV KEYS FOR F-E USE
+const env = dotenv.config().parsed;
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
 module.exports = {
   entry: `${_SOURCE}/index.jsx`,
   output: _OUTPUT_CONFIG,
@@ -58,7 +67,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({filename: 'styles.css'})
+    new ExtractTextPlugin({filename: 'styles.css'}),
+    new webpack.DefinePlugin(envKeys)
   ],
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.js', '.json', '.jsx'],

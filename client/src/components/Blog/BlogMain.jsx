@@ -23,10 +23,9 @@ class BlogMain extends React.Component {
   }
 
   componentWillMount() {
-    var { match } = this.props;
-    var page = match.params.page || 1;
+    var page = 1;
   
-    this.props.actions.fetchBlogPosts(1);
+    this.props.actions.fetchBlogPostsByPage(page);
   }
 
   shouldComponentUpdate(nextProps, nextState) {

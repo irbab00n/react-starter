@@ -1,8 +1,5 @@
 import * as types from '../../types';
-import Butter from 'buttercms';
-
-/* THIS IS AN API KEY, REFACTOR TO NON-LOCAL USE ASAP */
-const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
+import butter from '../../../config/buttercms';
 
 /* SET BLOG POSTS FETCHING ACTION */
 const setBlogPostsFetchingAction = (flag) => ({
@@ -45,20 +42,20 @@ const setBlogPostsErrorMessageAction = (message) => ({
 });
 
 
-export const fetchBlogPosts = (page) => {
+export const fetchBlogPostsByPage = (page) => {
   return dispatch => {
+    // console.log('fetch blog posts');
     dispatch(setBlogPostsFetchingAction(true));
     dispatch(setBlogPostsFetchedAction(false));
-    console.log('fetch blog posts');
     butter.post.list({page: page, page_size: 10})
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         dispatch(setBlogPostsFetchingAction(false));
         dispatch(setBlogPostsFetchedAction(true));
         dispatch(setBlogPostsAction(response.data));
       })
       .catch(error => {
-        console.log('something went wrong during posts fetch: ', error);
+        console.log('something went wrong while fetching blog posts: ', error);
         dispatch(setBlogPostsErrorAction(true));
         dispatch(setBlogPostsErrorMessageAction(error));
       });
