@@ -6,11 +6,10 @@ export default class BlogSideTrack extends React.Component {
   }
 
   render() {
-    const { lockSidebar, toggleSidebarLock } = this.props;
 
     return (
 
-      <div id="blog-side-track" className={`${lockSidebar ? 'locked' : ''}`}>
+      <div id="blog-side-track">
         <div className="inner-wrapper">
           Most Recent
         </div>

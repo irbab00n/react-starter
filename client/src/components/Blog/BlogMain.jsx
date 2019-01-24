@@ -18,61 +18,39 @@ class BlogMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
-      lockSidebar: true,
-      posts: [],
-      meta: {
-        next_page: null,
-        previous_page: null,
-      }
+      loaded: false
     };
-    this.fetchPosts = this.fetchPosts.bind(this);
-    this.toggleSidebarLock = this.toggleSidebarLock.bind(this);
   }
 
   componentWillMount() {
     var { match } = this.props;
     var page = match.params.page || 1;
-    
-    this.fetchPosts(page);
-  }
   
-  componentWillReceiveProps(nextProps) {
-    var { match } = nextProps;
-    this.setState({loaded: false});
-    
-    var page = match.params.page || 1;
-    
-    this.fetchPosts(page);
-  }
-  
-  fetchPosts(page) {
-    // console.log('fetching posts with page: ', page);
-    butter.post.list({page: page, page_size: 10})
-      .then(response => {
-        // console.log('response: ', response);
-        this.setState({
-          loaded: true,
-          posts: response.data.data,
-          meta: response.data.meta
-        });
-    });
+    this.props.actions.fetchBlogPosts(1);
   }
 
-  toggleSidebarLock() {
-    this.setState({
-      lockSidebar: !this.state.lockSidebar
-    });
+  shouldComponentUpdate(nextProps, nextState) {
+    const { loaded } = nextState;
+    const { posts } = nextProps.views.blog;
+    let updatedState = {};
+
+    if (posts.fetched && !posts.fetching && !loaded) {
+      updatedState.loaded = true;
+    }
+
+    if (Object.keys(updatedState).length > 0) {
+      this.setState(updatedState);
+    }
+
+    return true;
   }
+
 
   render() {
-    const { loaded, lockSidebar, meta, posts } = this.state;
+    const { loaded } = this.state;
     const { match } = this.props;
-
+    const { meta, posts } = this.props.views.blog.posts.storage;
     const { next_page, previous_page } = meta;
-
-    console.log('posts: ', posts);
-    console.log('props: ', this.props);
 
     return (
       <section id="blog-list" className="blog-view-wrapper">
@@ -91,25 +69,22 @@ class BlogMain extends React.Component {
 
         <div id="blog-content" className="inner-wrapper blog-content-wrapper">
           <div id="blog-main-track">
-            {posts.map((post, index) => {
-              return (
-                // PASS IN:
-                // post
-                // match
-                <BlogListItem
-                  key={`blog-list-item-${index}`}
-                  post={post}
-                  match={match}
-                />
-              )
-            })}
+            {
+              loaded ? 
+                posts.map((post, index) => {
+                return (
+                  <BlogListItem
+                    key={`blog-list-item-${index}`}
+                    post={post}
+                    match={match}
+                  />
+                )
+              }) : null // ADD IN LOADING EFFECT HERE
+            }
           </div>
 
           {/* Blog side track */}
-          <BlogSideTrack
-            lockSidebar={lockSidebar}
-            toggleSidebarLock={this.toggleSidebarLock}
-          />
+          <BlogSideTrack />
         </div>
 
 
