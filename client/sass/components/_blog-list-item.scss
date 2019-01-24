@@ -14,7 +14,7 @@ $blog-list-item-vertical-margin: 10px;
   text-decoration: none;
 
   &:hover {
-    @include box-shadow(0px, 0px, 4px, 0.2px, rgba(25, 25, 25, 0.2));
+    @include box-shadow(0px, 0px, 4px, 0.2px, rgba(25, 25, 25, 0.3));
     @include jumbotron-background-vert(0.40);
   }
 }
@@ -25,6 +25,10 @@ $blog-list-item-vertical-margin: 10px;
   color: $blue-grey-900;
   margin-right: $blog-list-item-image-margin;
   margin-left: $blog-list-item-image-margin;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
 }
 
 .blog-list-item > .image {
@@ -74,6 +78,20 @@ $blog-list-item-vertical-margin: 10px;
   font-size: 32px;
 }
 
-.blog-list-item > .categories-wrapper {
+.blog-list-item > .published-wrapper {
+  & > .title {
+    font-size: 16px; font-weight: 900;
+    margin-right: 10px;
+  }
+}
 
+.blog-list-item > .categories-wrapper, .blog-list-item > .tags-wrapper {
+  & > .title {
+    font-size: 16px; font-weight: 900;
+  }
+  & > ul {
+    list-style: none;
+    margin: 6px 0;
+  }
+  & > ul > li {}
 }

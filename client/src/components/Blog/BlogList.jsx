@@ -79,8 +79,8 @@ export default class BlogHome extends React.Component {
         </div>
 
         <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
-          <div>Meta Title Block</div>
-          <div>Social Share Block</div>
+          {/* <div>Meta Title Block</div> */}
+          {/* <div>Social Share Block</div> */}
         </div>
 
         <div id="blog-content" className="inner-wrapper blog-content-wrapper">
@@ -116,7 +116,11 @@ export default class BlogHome extends React.Component {
 
         <div className="blog-bottom-spacer"/>
 
-        <Footer />
+        {
+          loaded ?
+            <Footer /> :
+            null   
+        }
 
       </section>
     );
