@@ -17,7 +17,6 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: contain !important;
-  margin: 6px;
   opacity: 1;
   height: 174px;
 
@@ -29,6 +28,8 @@
 
 .most-recent-wrapper > .title {
   @include transition(0.2s);
+  @include flex;
   font-weight: 600;
+  margin: 6px 0;
   &:hover { color: $amber-900; }
 }

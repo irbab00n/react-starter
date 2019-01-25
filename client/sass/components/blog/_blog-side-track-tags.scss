@@ -43,10 +43,14 @@
   &:hover {
     @include box-shadow(0px, 0px, 4px, 0.2px, $amber-900);
   }
+
+  &:focus {
+    outline: 2px solid $amber-700;
+  }
 }
 .tags-wrapper > .dropdown-wrapper > .selection-arrow-wrapper {
   @include flex; @include align-center; @include justify-between;
-  background-color: $blue-grey-300;
+  background-color: $javascript-yellow;
   padding: 6px;
 }
 .tags-wrapper > .dropdown-wrapper > .selection-arrow-wrapper > .label {

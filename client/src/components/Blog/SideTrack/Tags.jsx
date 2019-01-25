@@ -36,7 +36,7 @@ class Tags extends React.Component {
 
       <div className="inner-wrapper tags-wrapper">
         <h4>See Posts Tagged With</h4>
-        <div className="dropdown-wrapper">
+        <div className="dropdown-wrapper" tabIndex="0" onBlur={showList ? this.toggleShowList : () => {}}>
           <div className="selection-arrow-wrapper" onClick={this.toggleShowList}>
             <span className="label">Tag</span>
             <i className={`fas fa-angle-down arrow ${showList ? 'show' : ''}`}></i>
