@@ -49,9 +49,12 @@
   }
 }
 .tags-wrapper > .dropdown-wrapper > .selection-arrow-wrapper {
+  @include transition(0.2s);
   @include flex; @include align-center; @include justify-between;
   background-color: $javascript-yellow;
   padding: 6px;
+
+  &:active { background-color: $amber-500; }
 }
 .tags-wrapper > .dropdown-wrapper > .selection-arrow-wrapper > .label {
   font-size: 16px; font-weight: 600;

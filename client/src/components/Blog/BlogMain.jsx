@@ -5,13 +5,9 @@ import { connect } from 'react-redux';
 import dispatchMappedActions from '../../redux/dispatchMappedActions';
 
 import { Helmet } from "react-helmet";
-import Butter from 'buttercms';
-
 import BlogListItem from './BlogListItem';
 import BlogSideTrack from './SideTrack/';
 import Footer from '../Footer/'
-
-const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
 
 class BlogMain extends React.Component {
 
@@ -25,9 +21,7 @@ class BlogMain extends React.Component {
   componentWillMount() {
     var config = {page: 1};
   
-    this.props.actions.fetchBlogCategories();
     this.props.actions.fetchBlogPostsWithConfig(config);
-    this.props.actions.fetchBlogTags();
   }
 
   shouldComponentUpdate(nextProps, nextState) {

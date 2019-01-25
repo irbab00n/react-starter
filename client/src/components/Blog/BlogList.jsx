@@ -1,35 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
-import Butter from 'buttercms';
+/* REDUX */
+import { connect } from 'react-redux';
+import dispatchMappedActions from '../../redux/dispatchMappedActions';
 
+import { Helmet } from "react-helmet";
 import BlogListItem from './BlogListItem';
 import BlogSideTrack from './SideTrack/';
 import Footer from '../Footer/'
 
-const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
-
-export default class BlogList extends React.Component {
+class BlogList extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       loaded: false,
-      lockSidebar: true,
-      posts: [],
-      meta: {
-        next_page: null,
-        previous_page: null,
-      }
     };
   }
 
   componentWillMount() {
     var { params } = this.props.match;
 
-    this.props.actions.fetchBlogCategories();
     this.props.actions.fetchBlogPostsWithConfig(params);
-    this.props.actions.fetchBlogTags();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { loaded } = nextState;
+    const { posts } = nextProps.views.blog;
+    let updatedState = {};
+
+    if (posts.fetched && !posts.fetching && !loaded) {
+      updatedState.loaded = true;
+    }
+
+    if (Object.keys(updatedState).length > 0) {
+      this.setState(updatedState);
+    }
+
+    return true;
   }
 
   render() {
@@ -96,3 +104,10 @@ export default class BlogList extends React.Component {
     );
   }
 }
+
+const ConnectedBlogList = connect(
+  state => state,
+  dispatchMappedActions
+)(BlogList);
+
+export default ConnectedBlogList;
