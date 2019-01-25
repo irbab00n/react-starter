@@ -58,7 +58,7 @@ export default class BlogListItem extends React.Component {
     const { match, post } = this.props;
 
     return (
-      <Link to={`${match.url}/post/${post.slug}`} key={post.slug} className="inner-wrapper blog-list-item">
+      <Link to={`/blog/post/${post.slug}`} key={post.slug} className="inner-wrapper blog-list-item">
         <div className="image" style={{background: `url(${post.featured_image})`}}/>
         <h4>{post.title}</h4>
         <p>{post.summary}</p>
