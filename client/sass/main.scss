@@ -8,7 +8,9 @@
 @import "base/shared";
 
 /* COMPONENTS SASS FILES */
+@import "components/blog/blog-side-track-categories";
 @import "components/blog/blog-side-track-most-recent";
+@import "components/blog/blog-side-track-tags";
 @import "components/blog-list-item";
 @import "components/footer";
 @import "components/jumbotron";
