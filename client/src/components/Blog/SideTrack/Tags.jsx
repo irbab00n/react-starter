@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 /* REDUX */
 import { connect } from 'react-redux';
 import dispatchMappedActions from '../../../redux/dispatchMappedActions';
@@ -18,7 +19,11 @@ class Tags extends React.Component {
 
     return storage.map(tag => {
       return (
-        <li key={`tag-${tag.slug}`}>{tag.name}</li>
+        <li key={`tag-${tag.slug}`} onClick={this.toggleShowList}>
+          <Link to={`/blog/tag/${tag.slug}`}>
+            {tag.name}
+          </Link>
+        </li>
       );
     });
   }
@@ -36,7 +41,7 @@ class Tags extends React.Component {
 
       <div className="inner-wrapper tags-wrapper">
         <h4>See Posts Tagged With</h4>
-        <div className="dropdown-wrapper" tabIndex="0" onBlur={showList ? this.toggleShowList : () => {}}>
+        <div className="dropdown-wrapper">
           <div className="selection-arrow-wrapper" onClick={this.toggleShowList}>
             <span className="label">Tag</span>
             <i className={`fas fa-angle-down arrow ${showList ? 'show' : ''}`}></i>

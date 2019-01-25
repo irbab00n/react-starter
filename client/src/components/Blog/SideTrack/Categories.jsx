@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 /* REDUX */
 import { connect } from 'react-redux';
 import dispatchMappedActions from '../../../redux/dispatchMappedActions';
@@ -18,7 +19,11 @@ class Categories extends React.Component {
 
     return storage.map(category => {
       return (
-        <li key={`category-${category.slug}`}>{category.name}</li>
+        <li key={`category-${category.slug}`} onClick={this.toggleShowList}>
+          <Link to={`/blog/category/${category.slug}`}>
+            {category.name}
+          </Link>
+        </li>
       );
     });
   }
@@ -36,7 +41,7 @@ class Categories extends React.Component {
 
       <div className="inner-wrapper categories-wrapper">
         <h4>See Posts From Category</h4>
-        <div className="dropdown-wrapper" tabIndex="0" onBlur={showList ? this.toggleShowList : () => {}}>
+        <div className="dropdown-wrapper">
           <div className="selection-arrow-wrapper" onClick={this.toggleShowList}>
             <span className="label">Category</span>
             <i className={`fas fa-angle-down arrow ${showList ? 'show' : ''}`}></i>

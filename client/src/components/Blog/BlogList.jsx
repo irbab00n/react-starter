@@ -9,6 +9,8 @@ import BlogListItem from './BlogListItem';
 import BlogSideTrack from './SideTrack/';
 import Footer from '../Footer/'
 
+import areObjectsDeepEqual from '../../lib/helpers/areObjectsDeepEqual';
+
 class BlogList extends React.Component {
 
   constructor(props) {
@@ -28,6 +30,12 @@ class BlogList extends React.Component {
     const { loaded } = nextState;
     const { posts } = nextProps.views.blog;
     let updatedState = {};
+
+    /* If the match object changes, indicating the user changing the url via a React Router Link, fetch posts for the new params */
+    if (!areObjectsDeepEqual(this.props.match, nextProps.match)) {
+      this.props.actions.fetchBlogPostsWithConfig(nextProps.match.params);
+      updatedState.loaded = false;
+    }
 
     if (posts.fetched && !posts.fetching && !loaded) {
       updatedState.loaded = true;

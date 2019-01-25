@@ -91,3 +91,8 @@
     background-color: $white;
   }
 }
+
+.categories-wrapper > .dropdown-wrapper > ul > li > a {
+  @include flex; @include align-center;
+  height: 100%; width: 100%;
+}
