@@ -27,6 +27,7 @@ class BlogMain extends React.Component {
   
     this.props.actions.fetchBlogCategories();
     this.props.actions.fetchBlogPostsByPage(page);
+    this.props.actions.fetchBlogTags();
   }
 
   shouldComponentUpdate(nextProps, nextState) {
