@@ -14,6 +14,9 @@ const Blog = (props) => (
         /* Since cosbytes.com/blog/post returns nothing, redirect it back to the blog main url */
         <Redirect to={props.match.url}/>
       )} />
+      <Route path={`${props.match.url}/category/:category`}  component={BlogList} />
+      <Route path={`${props.match.url}/tag/:tag`}  component={BlogList} />
+
       <Route path={`${props.match.url}/post/:slug`} component={BlogPost} />
     </Switch>
   </main>

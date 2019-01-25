@@ -42,14 +42,36 @@ const setBlogPostsErrorMessageAction = (message) => ({
 });
 
 
-export const fetchBlogPostsByPage = (page) => {
+export const fetchBlogPostsWithConfig = (config) => {
+  const pageSizeLimit = 10;
+
+  const configCache = {
+    category: (category) => ({category_slug: category}),
+    page: (page) => ({page: page, page_size: pageSizeLimit}),
+    tag: (tag) => ({tag_slug: tag})
+  };
+
+  var configList = Object.keys(config).map(key => {
+    return configCache[key](config[key]);
+  });
+
+  var builtConfig = configList.reduce((prev, next) => {
+    return Object.assign(prev, next);
+  }, {});
+
+  console.log(builtConfig);
+
+  // category - {category_slog: category}
+  // tag      - {tag_slug: tag}
+  // page     - {page: page, page_size: pageSizeLimit}
+
   return dispatch => {
     // console.log('fetch blog posts');
     dispatch(setBlogPostsFetchingAction(true));
     dispatch(setBlogPostsFetchedAction(false));
-    butter.post.list({page: page, page_size: 10})
+    butter.post.list(builtConfig)
       .then(response => {
-        // console.log('response: ', response);
+        console.log('response: ', response);
         dispatch(setBlogPostsFetchingAction(false));
         dispatch(setBlogPostsFetchedAction(true));
         dispatch(setBlogPostsAction(response.data));

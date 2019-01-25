@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
 
-import BlogSideTrack from './BlogSideTrack';
+import BlogSideTrack from './SideTrack/';
 import Footer from '../Footer/'
 
 const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
