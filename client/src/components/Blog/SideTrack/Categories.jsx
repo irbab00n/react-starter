@@ -3,21 +3,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import dispatchMappedActions from '../../../redux/dispatchMappedActions';
 
-class MostRecent extends React.Component {
+class Categories extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.actions.fetchBlogMostRecentPost();
-  }
-
   render() {
-  
+
     return (
 
-      <div className="inner-wrapper most-recent-wrapper">
-        Most Recent
+      <div className="inner-wrapper categories-wrapper">
+        Categories
       </div>
 
     );
@@ -25,9 +21,9 @@ class MostRecent extends React.Component {
   }
 }
 
-const ConnectedMostRecent = connect(
+const ConnectedCategories = connect(
   state => state,
   dispatchMappedActions
-)(MostRecent);
+)(Categories);
 
-export default ConnectedMostRecent;
+export default ConnectedCategories;

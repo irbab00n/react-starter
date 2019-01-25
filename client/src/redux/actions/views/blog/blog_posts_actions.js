@@ -71,7 +71,7 @@ export const fetchBlogPostsWithConfig = (config) => {
     dispatch(setBlogPostsFetchedAction(false));
     butter.post.list(builtConfig)
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         dispatch(setBlogPostsFetchingAction(false));
         dispatch(setBlogPostsFetchedAction(true));
         dispatch(setBlogPostsAction(response.data));

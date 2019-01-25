@@ -49,7 +49,7 @@ export const fetchBlogTags = () => {
     dispatch(setBlogTagsFetchedAction(false));
     butter.tag.list()
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         dispatch(setBlogTagsFetchingAction(false));
         dispatch(setBlogTagsFetchedAction(true));
         dispatch(setBlogTagsAction(response.data.data));

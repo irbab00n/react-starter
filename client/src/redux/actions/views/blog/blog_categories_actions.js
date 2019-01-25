@@ -49,7 +49,7 @@ export const fetchBlogCategories = () => {
     dispatch(setBlogCategoriesFetchedAction(false));
     butter.category.list()
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         dispatch(setBlogCategoriesFetchingAction(false));
         dispatch(setBlogCategoriesFetchedAction(true));
         dispatch(setBlogCategoriesAction(response.data.data));

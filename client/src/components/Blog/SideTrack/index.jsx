@@ -1,47 +1,15 @@
 import React from 'react';
-/* REDUX */
-import { connect } from 'react-redux';
-import dispatchMappedActions from '../../../redux/dispatchMappedActions';
 
+import Categories from './Categories';
 import MostRecent from './MostRecent';
+import Tags from './Tags';
 
-class BlogSideTrack extends React.Component {
-  constructor(props) {
-    super(props);
-    this.buildCategoriesList = this.buildCategoriesList.bind(this);
-    this.buildTagsList = this.buildTagsList.bind(this);
-  }
+const BlogSideTrack = (props) => (
+  <div id="blog-side-track">
+    <MostRecent />
+    <Categories />
+    <Tags />
+  </div>
+);
 
-  buildCategoriesList() {
-    const {  } = this.props.views.blog.categories.storage
-  }
-
-  buildTagsList() {
-
-  }
-
-  render() {
-
-    return (
-
-      <div id="blog-side-track">
-        <MostRecent />
-        <div className="inner-wrapper categories-wrapper">
-          Categories
-        </div>
-        <div className="inner-wrapper tags-wrapper">
-          Tags
-        </div>
-      </div>
-
-    );
-
-  }
-};
-
-const ConnectedBlogSideTrack = connect(
-  state => state,
-  dispatchMappedActions
-)(BlogSideTrack);
-
-export default ConnectedBlogSideTrack;
+export default BlogSideTrack;

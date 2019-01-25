@@ -27,6 +27,15 @@ const INITIAL_STATE = () => ({
     error: false,
     errorMessage: ''
   },
+  sidetrack: {
+    mostRecent: {
+      post: {},
+      fetched: false,
+      fetching: false,
+      error: false,
+      errorMessage: ''
+    }
+  },
   tags: {
     storage: {
       posts: [],
@@ -70,6 +79,32 @@ const blogReducer = (state = new INITIAL_STATE(), action) => {
     // Stores the retrieved categories
     case types.SET_BLOG_CATEGORIES:
       newState.categories.storage = action.payload.categories;
+      return newState;
+
+/* ----- MOST RECENT ----- */
+    // Changes the state of the posts error flag
+    case types.SET_BLOG_MOST_RECENT_ERROR:
+      newState.sidetrack.mostRecent.error = action.payload.flag;
+      return newState;
+
+    // Changes the content of the posts error message
+    case types.SET_BLOG_MOST_RECENT_ERROR_MESSAGE:
+      newState.sidetrack.mostRecent.errorMessage = action.payload.message;
+      return newState;
+
+    // Changes the state of the posts fetched flag
+    case types.SET_BLOG_MOST_RECENT_FETCHED:
+      newState.sidetrack.mostRecent.fetched = action.payload.flag;
+      return newState;
+
+    // Changes the state of the posts fetching flag
+    case types.SET_BLOG_MOST_RECENT_FETCHING:
+      newState.sidetrack.mostRecent.fetching = action.payload.flag;
+      return newState;  
+
+    // Stores the retrieved posts
+    case types.SET_BLOG_MOST_RECENT:
+      newState.sidetrack.mostRecent.post = action.payload.post;
       return newState;
 
 /* ----- POSTS ----- */
