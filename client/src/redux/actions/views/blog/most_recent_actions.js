@@ -49,7 +49,7 @@ export const fetchBlogMostRecentPost = () => {
     dispatch(setBlogMostRecentFetchedAction(false));
     butter.post.list({page: 1, page_size: 1})
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         dispatch(setBlogMostRecentFetchingAction(false));
         dispatch(setBlogMostRecentFetchedAction(true));
         dispatch(setBlogMostRecentAction(response.data.data[0]));

@@ -41,7 +41,7 @@ export default class BlogPost extends Component {
     if (this.state.loaded) {
       const post = this.state.post;
 
-      console.log('post object: ', post);
+      // console.log('post object: ', post);
 
       return (
         <section id="blog-list" className="blog-view-wrapper">

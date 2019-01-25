@@ -59,7 +59,7 @@ export const fetchBlogPostsWithConfig = (config) => {
     return Object.assign(prev, next);
   }, {});
 
-  console.log(builtConfig);
+  // console.log(builtConfig);
 
   // category - {category_slog: category}
   // tag      - {tag_slug: tag}
