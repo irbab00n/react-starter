@@ -22,52 +22,21 @@ export default class BlogList extends React.Component {
         previous_page: null,
       }
     };
-    this.fetchPosts = this.fetchPosts.bind(this);
-    this.toggleSidebarLock = this.toggleSidebarLock.bind(this);
   }
 
   componentWillMount() {
-    var { match } = this.props;
-    var page = match.params.page || 1;
-    
-    this.fetchPosts(page);
-  }
-  
-  componentWillReceiveProps(nextProps) {
-    var { match } = nextProps;
-    this.setState({loaded: false});
-    
-    var page = match.params.page || 1;
-    
-    this.fetchPosts(page);
-  }
-  
-  fetchPosts(page) {
-    // console.log('fetching posts with page: ', page);
-    butter.post.list({page: page, page_size: 10})
-      .then(response => {
-        // console.log('response: ', response);
-        this.setState({
-          loaded: true,
-          posts: response.data.data,
-          meta: response.data.meta
-        });
-    });
-  }
+    var { params } = this.props.match;
 
-  toggleSidebarLock() {
-    this.setState({
-      lockSidebar: !this.state.lockSidebar
-    });
+    this.props.actions.fetchBlogCategories();
+    this.props.actions.fetchBlogPostsWithConfig(params);
+    this.props.actions.fetchBlogTags();
   }
 
   render() {
-    const { loaded, lockSidebar, meta, posts } = this.state;
+    const { loaded } = this.state;
     const { match } = this.props;
-
+    const { meta, posts } = this.props.views.blog.posts.storage;
     const { next_page, previous_page } = meta;
-
-    console.log('posts: ', posts);
 
     return (
       <section id="blog-list" className="blog-view-wrapper">
@@ -101,10 +70,7 @@ export default class BlogList extends React.Component {
           </div>
 
           {/* Blog side track */}
-          <BlogSideTrack
-            lockSidebar={lockSidebar}
-            toggleSidebarLock={this.toggleSidebarLock}
-          />
+          <BlogSideTrack />
         </div>
 
 
