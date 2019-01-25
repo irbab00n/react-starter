@@ -13,12 +13,17 @@ class MostRecent extends React.Component {
   }
 
   render() {
+    const { mostRecent } = this.props.views.blog.sidetrack;
+
+    console.log('most recent: ', mostRecent);
   
     return (
 
-      <div className="inner-wrapper most-recent-wrapper">
-        Most Recent
-      </div>
+      <a className="inner-wrapper most-recent-wrapper" href={`/blog/post/${mostRecent.post.slug}`}>
+        <h4>Most Recent Post</h4>
+        <div className="image" style={{background: `url(${mostRecent.post.featured_image})`}}/>
+        <span className="title">{mostRecent.post.title}</span>
+      </a>
 
     );
 

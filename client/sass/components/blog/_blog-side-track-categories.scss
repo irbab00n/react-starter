@@ -1,0 +1,34 @@
+.categories-wrapper {
+  color: $blue-grey-900;
+  margin: 0 !important;
+  text-decoration: none;
+}
+
+.categories-wrapper > h4 {
+  @include transition(0.2s);
+  font-size: 24px; font-weight: 900;
+  margin: 6px 0;
+  &:hover { color: $blue-grey-900; }
+}
+
+.categories-wrapper > .image {
+  @include transition(0.2s);
+  background-color: $grey-900 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  margin: 6px;
+  opacity: 1;
+  height: 174px;
+
+  &:hover {
+    @include box-shadow(1px, 1px, 4px, 0.2px, rgba(25, 25, 25, 0.8));
+    opacity: 0.8;
+  }
+}
+
+.categories-wrapper > .title {
+  @include transition(0.2s);
+  font-weight: 600;
+  &:hover { color: $amber-900; }
+}
