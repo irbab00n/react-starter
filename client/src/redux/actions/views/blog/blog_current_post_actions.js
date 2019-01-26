@@ -54,7 +54,7 @@ export const retrieveBlogPostFromSlug = (slug) => {
     // Get the post using the slug
     butter.post.retrieve(slug)
       .then(response => {
-        console.log('response: ', response);
+        // console.log('response: ', response);
         // Set fetching state false, fetched state true        
         dispatch(setBlogCurrentPostFetchingAction(false));
         dispatch(setBlogCurrentPostFetchedAction(true));

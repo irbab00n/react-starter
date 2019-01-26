@@ -12,7 +12,7 @@ $blog-layout-navbar-margin: 50px;
 
 $blog-page-inner-wrapper-max-width: 1100px; 
 
-$blog-meta-wrapper-height: 70px;
+$blog-meta-wrapper-height: 100px;
 
 $blog-main-track-width: 780px;
 $blog-main-track-margin: 6px;
@@ -52,6 +52,7 @@ $blog-bottom-spacer-height: 75px;
 
   & > h1 {
     font-size: 56px;
+    margin-bottom: 0px
   }
   & > h2 {
     font-size: 48px;
@@ -68,9 +69,33 @@ $blog-bottom-spacer-height: 75px;
 .blog-meta-wrapper {
   @include flex; @include align-center; @include justify-between;
   // background-color: $blue-grey-300;
-  height: $blog-meta-wrapper-height; width: 100%;
+  width: 100%;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+/* --- AUTHOR BLOCK WRAPPER */
+.author-block-wrapper {
+  @include flex; @include align-center;
+}
+.author-block-wrapper > .avatar {
+  height: 48px; width: 48px;
+  border-radius: 50%;
+  background-color: $blue-grey-500;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+.author-block-wrapper > .author-info-block {
+  @include flex; @include flex-column;
+  margin-left: 10px;
+
+  & > .name {
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+  }
 }
 
+/* --- FILTER BREADCRUMB WRAPPER */
 .filter-breadcrumb-wrapper {
   @include flex; @include align-center;
 }
@@ -80,6 +105,7 @@ $blog-bottom-spacer-height: 75px;
 .filter-breadcrumb-wrapper > span {
   margin: 0 10px;
 }
+
 /* BLOG CONTENT WRAPPER */
 .blog-content-wrapper {
   @include flex; @include flex-wrap(no-wrap);

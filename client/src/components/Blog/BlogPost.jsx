@@ -42,7 +42,6 @@ class BlogPost extends Component {
     }
 
     if (currentPost.fetched && !currentPost.fetching && !loaded) {
-      console.log('post fetched: ', currentPost);
       updatedState.loaded = true;
     }
 
@@ -64,10 +63,9 @@ class BlogPost extends Component {
     const { post } = this.props.views.blog.currentPost;
 
     let postInState = Object.keys(post).length > 0;
-
-    // console.log('post object: ', post);
-
+    
     if (loaded && postInState) {
+
       return (
         <section id="blog-list" className="blog-view-wrapper">
 
@@ -87,8 +85,12 @@ class BlogPost extends Component {
             Both of these blocks can find their information from the post.data.author prop
           */}
           <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
-            <div>
-              Meta Title Block
+            <div className="author-block-wrapper">
+              <div className="avatar" style={{background: `url(${post.data.author.profile_image})`}}></div>
+              <div className="author-info-block">
+                <div className="name">{`Post by ${post.data.author.first_name} ${post.data.author.last_name}`}</div>
+                <div className="date">{`Posted ${new Date(post.data.published).toDateString()}`}</div>
+              </div>
             </div>
             <div />
           </div>
