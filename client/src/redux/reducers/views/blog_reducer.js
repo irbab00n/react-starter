@@ -14,6 +14,13 @@ const INITIAL_STATE = () => ({
     error: false,
     errorMessage: ''
   },
+  currentPost: {
+    post: {},
+    fetched: false,
+    fetching: false,
+    error: false,
+    errorMessage: ''
+  },
   posts: {
     storage: {
       posts: [],
@@ -79,6 +86,32 @@ const blogReducer = (state = new INITIAL_STATE(), action) => {
     // Stores the retrieved categories
     case types.SET_BLOG_CATEGORIES:
       newState.categories.storage = action.payload.categories;
+      return newState;
+
+/* ----- CURRENT POST ----- */
+    // Changes the state of the categories error flag
+    case types.SET_BLOG_CURRENT_POST_ERROR:
+      newState.currentPost.error = action.payload.flag;
+      return newState;
+
+    // Changes the content of the categories error message
+    case types.SET_BLOG_CURRENT_POST_ERROR_MESSAGE:
+      newState.currentPost.errorMessage = action.payload.message;
+      return newState;
+
+    // Changes the state of the categories fetched flag
+    case types.SET_BLOG_CURRENT_POST_FETCHED:
+      newState.currentPost.fetched = action.payload.flag;
+      return newState;
+
+    // Changes the state of the categories fetching flag
+    case types.SET_BLOG_CURRENT_POST_FETCHING:
+      newState.currentPost.fetching = action.payload.flag;
+      return newState;  
+
+    // Stores the retrieved categories
+    case types.SET_BLOG_CURRENT_POST:
+      newState.currentPost.post = action.payload.post;
       return newState;
 
 /* ----- MOST RECENT ----- */

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Butter from 'buttercms'
+/* REDUX */
+import { connect } from 'react-redux';
+import dispatchMappedActions from '../../redux/dispatchMappedActions';
 import { Helmet } from "react-helmet";
 
 import BlogSideTrack from './SideTrack/';
 import Footer from '../Footer/'
 
-const butter = Butter('99e3c38507f191c5f64f0fc1dd27369ef8bda69e');
+import areObjectsDeepEqual from '../../lib/helpers/areObjectsDeepEqual';
 
-export default class BlogPost extends Component {
+
+class BlogPost extends Component {
 
   constructor(props) {
     super(props);
@@ -19,14 +22,35 @@ export default class BlogPost extends Component {
   }
 
   componentWillMount() {
-    let slug = this.props.match.params.slug;
+    const { slug } = this.props.match.params;
 
-    butter.post.retrieve(slug).then((resp) => {
-      this.setState({
-        loaded: true,
-        post: resp.data.data
-      })
-    });
+    this.props.actions.retrieveBlogPostFromSlug(slug);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { loaded } = nextState;
+    const { currentPost } = nextProps.views.blog;
+    let updatedState = {};
+
+    /* 
+      If the match object changes, indicating the user changing the url 
+      via a React Router Link, fetch posts for the new params 
+    */
+    if (!areObjectsDeepEqual(this.props.match, nextProps.match)) {
+      this.props.actions.retrieveBlogPostFromSlug(nextProps.match.params.slug);
+      updatedState.loaded = false;
+    }
+
+    if (currentPost.fetched && !currentPost.fetching && !loaded) {
+      console.log('post fetched: ', currentPost);
+      updatedState.loaded = true;
+    }
+
+    if (Object.keys(updatedState).length > 0) {
+      this.setState(updatedState);
+    }
+
+    return true;
   }
 
   toggleSidebarLock() {
@@ -36,39 +60,42 @@ export default class BlogPost extends Component {
   }
 
   render() {
-    const { lockSidebar } = this.state;
+    const { loaded, lockSidebar } = this.state;
+    const { post } = this.props.views.blog.currentPost;
 
-    if (this.state.loaded) {
-      const post = this.state.post;
+    let postInState = Object.keys(post).length > 0;
 
-      // console.log('post object: ', post);
+    // console.log('post object: ', post);
 
+    if (loaded && postInState) {
       return (
         <section id="blog-list" className="blog-view-wrapper">
 
           <div id="blog-title" className="inner-wrapper blog-title-wrapper">
             <Helmet>
-              <title>{post.seo_title}</title>
-              <meta name="description" content={post.meta_description} />
-              <meta name="og:image" content={post.featured_image} />
+              <title>{post.data.seo_title}</title>
+              <meta name="description" content={post.data.meta_description} />
+              <meta name="og:image" content={post.data.featured_image} />
             </Helmet>
-            <h1>{post.title}</h1>
+            <h1>{post.data.title}</h1>
           </div>
 
           {/* 
             BLOG META BLOCK
             SOCIAL SHARE BLOCK
 
-            Both of these blocks can find their information from the post.author prop
+            Both of these blocks can find their information from the post.data.author prop
           */}
           <div id="blog-meta" className="inner-wrapper blog-meta-wrapper">
-            <div>Meta Title Block</div>
-            <div>Social Share Block</div>
+            <div>
+              Meta Title Block
+            </div>
+            <div />
           </div>
 
           <div id="blog-content" className="inner-wrapper blog-content-wrapper">
             <div id="blog-main-track"
-              dangerouslySetInnerHTML={{__html: post.body}}
+              dangerouslySetInnerHTML={{__html: post.data.body}}
             />
 
             {/* SIDE TRACK WILL BE MANAGED SEPERATELY */}
@@ -93,3 +120,10 @@ export default class BlogPost extends Component {
     }
   }
 }
+
+const ConnectedBlogPost = connect(
+  state => state,
+  dispatchMappedActions
+)(BlogPost);
+
+export default ConnectedBlogPost;
