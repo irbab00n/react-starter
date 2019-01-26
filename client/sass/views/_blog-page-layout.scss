@@ -71,6 +71,15 @@ $blog-bottom-spacer-height: 75px;
   height: $blog-meta-wrapper-height; width: 100%;
 }
 
+.filter-breadcrumb-wrapper {
+  @include flex; @include align-center;
+}
+.filter-breadcrumb-wrapper > h4 {
+  font-size: 24px;
+}
+.filter-breadcrumb-wrapper > span {
+  margin: 0 10px;
+}
 /* BLOG CONTENT WRAPPER */
 .blog-content-wrapper {
   @include flex; @include flex-wrap(no-wrap);
