@@ -121,6 +121,10 @@ $blog-list-item-vertical-margin: 10px;
   }
 }
 
+.blog-list-item > p {
+  font-size: 16px;
+}
+
 .blog-list-item > .published-wrapper {
   & > .title {
     font-size: 16px; font-weight: 900;

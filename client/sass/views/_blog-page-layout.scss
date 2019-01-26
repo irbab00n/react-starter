@@ -114,14 +114,26 @@ $blog-bottom-spacer-height: 75px;
 
 /* BLOG MAIN TRACK */
 #blog-main-track {
+  @include flex; @include flex-column;
   // background-color: $blue-grey-500;
   margin-right: 0;
   width: $blog-main-track-width;
+}
+/* BLOG MAIN TRACK TITLE */
+#blog-main-track > h1 {
+  line-height: 1;
+  font-size: 32px;
+  margin-bottom: 0px;
 }
 /* BLOG MAIN TRACK IMAGE CONTAINER */
 #blog-main-track > figure {
   width: $blog-main-track-image-width;
   margin: 0 $blog-main-track-margin;
+}
+/* BLOG MAIN TRACK PARAGRAPH */
+#blog-main-track > p {
+  margin: 20px 0 40px 0;
+  font-size: 16px; 
 }
 /* BLOG MAIN TRACK IMAGE */
 #blog-main-track > p > img, #blog-main-track > figure > img {
