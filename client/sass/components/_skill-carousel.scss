@@ -57,7 +57,7 @@ $skill-card-description-margin: 0px;
   height: $skill-carousel-height-full;
 
   &:hover {
-    background-color: $blue-grey-50;
+    background-color: $white;
 
     .skill-card-image {
       height: $skill-card-image-size-full-hovered;
@@ -95,6 +95,7 @@ $skill-card-description-margin: 0px;
   font-weight: 500;
 
   & > * {
+    font-family: Helvetica, sans-serif;
     margin-top: $skill-card-description-margin-full;
   }
 }

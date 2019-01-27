@@ -126,7 +126,8 @@ ul.project-tech-wrapper > li {
 /* DESCRIPTION */
 .project-description-wrapper {
   color: $blue-grey-900;
-  font-size: 16px; font-weight: 500;
+  line-height: 1.3;
+  font-size: 18px; font-weight: 500; letter-spacing: 0.3px;
   padding: 20px 0;
 }
 
