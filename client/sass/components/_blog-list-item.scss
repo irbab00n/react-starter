@@ -140,5 +140,12 @@ $blog-list-item-vertical-margin: 10px;
     list-style: none;
     margin: 6px 0;
   }
-  & > ul > li {}
+  & > ul > li {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 /**
+ * Capitolizes the first character in a given string
  * @param {string} string The string of which you want to capitolize the first character in
  * @returns {string} The capitolized string
  */
