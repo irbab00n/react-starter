@@ -19,7 +19,7 @@ class BlogMain extends React.Component {
   }
 
   componentWillMount() {
-    var config = {page: 1};
+    var config = {};
   
     this.props.actions.fetchBlogPostsWithConfig(config);
   }
