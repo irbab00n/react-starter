@@ -168,8 +168,17 @@ export default class ProjectPanel extends React.Component {
         <div className="inner-wrapper no-padding top-spacer">
           <div className="project-split-wrapper">
             <div className="project-links-wrapper">
-              <div className="link-line"><i className="fas fa-link"></i><a href={project.link} target="_blank">{project.link}</a></div>
-              <div className="link-line"><i className="fab fa-github"></i><a href={project.repo} target="_blank">{project.repo}</a></div>
+              {
+                project.link !== '' ?
+                  <div className="link-line"><i className="fas fa-link"></i><a href={project.link} target="_blank">{project.link}</a></div> :
+                  null
+              }
+              {
+                project.repo !== '' ?
+                  <div className="link-line"><i className="fab fa-github"></i><a href={project.repo} target="_blank">{project.repo}</a></div> :
+                  null
+              }
+              
             </div>
             <div className="project-contributors-wrapper">
               <h4>Contributors</h4>

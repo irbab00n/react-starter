@@ -77,7 +77,7 @@ module.exports = [
       {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/dropShippit.png', description: 'A provided search term would compare search results from both Dollar Tree and Amazon'},
     ],
     title: 'DropShippit',
-    link: 'https://drop-shippit.herokuapp.com/',
+    link: '',
     repo: 'https://github.com/irbab00n/hrsf80-mvp',
     contributors: ['Thomas Cosby'],
     stack: [
