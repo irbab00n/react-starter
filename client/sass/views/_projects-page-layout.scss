@@ -41,7 +41,8 @@ $main-track-max-width: 980px;
   position: fixed;
   opacity: 0;
   overflow-y: scroll;
-  height: calc(100vh - #{$navbar-height});
+  // height: calc(100vh - #{$navbar-height});
+  height: 100%;
   width: $side-track-expanded-width-full;
 
   & > .inner-wrapper {
@@ -59,8 +60,9 @@ $main-track-max-width: 980px;
   @include transition(0.4s);
   margin-left: $side-track-expanded-width-full;
   overflow-y: scroll;
-  height: calc(100vh - #{$navbar-height});
+  // height: calc(100vh - #{$navbar-height});
   opacity: 0;
+  height: 100%;
   width: calc(100% - #{$side-track-expanded-width-full});
 
   & > .inner-wrapper {

@@ -12,6 +12,7 @@ const images = {
   'Express': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/express-bw-200.png',
   'Heroku': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/heroku-500.png',
   'JS': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jsLogo_619x619.jpg',
+  'jQuery': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery.png',
   'Node': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/nodejs-512.png',
   'Postgres': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/postgres.png',
   'React': 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react_512x512.png',
@@ -167,8 +168,8 @@ export default class ProjectPanel extends React.Component {
         <div className="inner-wrapper no-padding top-spacer">
           <div className="project-split-wrapper">
             <div className="project-links-wrapper">
-              <div className="link-line"><i className="fas fa-link"></i><a href={project.link}>{project.link}</a></div>
-              <div className="link-line"><i className="fab fa-github"></i><a href={project.repo}>{project.repo}</a></div>
+              <div className="link-line"><i className="fas fa-link"></i><a href={project.link} target="_blank">{project.link}</a></div>
+              <div className="link-line"><i className="fab fa-github"></i><a href={project.repo} target="_blank">{project.repo}</a></div>
             </div>
             <div className="project-contributors-wrapper">
               <h4>Contributors</h4>

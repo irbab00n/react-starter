@@ -4,6 +4,7 @@
   background-color: $blue-grey-50;
   border-bottom: 1px solid rgba(175, 175, 175, 0.5);
   height: 220px;
+  overflow: hidden;
 
   &:hover {
     background-color: white;
@@ -24,9 +25,10 @@
   height: 100%;
 
   & > h4 {
-    font-size: 24px; font-weight: 500;
+    font-size: 24px; font-weight: 500; line-height: 1;
     max-width: 50%;
-    margin: 0 0 0 20px;
+    margin: 0;
+    padding: 0 0 0 20px;
   }
 }
 
