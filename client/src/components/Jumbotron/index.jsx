@@ -13,6 +13,7 @@ const slides = [
         <a><button className="large-font">Button 3</button></a>
       </div>
     ),
+    backgroundColor: '#0F6DB4',
     subtitle: 'Example sub-title',
     title: 'Example Title',
     textWhite: true
@@ -23,6 +24,7 @@ const slides = [
         <a><button className="large-font">Action Button</button></a>
       </div>
     ),
+    backgroundColor: '#82B74F',
     subtitle: 'Place your advertisement here!',
     title: 'Are you selling something?',
     textWhite: false
@@ -33,6 +35,7 @@ const slides = [
         <a><button className="large-font">Action Button 2</button></a>
       </div>
     ),
+    backgroundColor: '#EE6534',
     subtitle: 'Place your advertisement here!',
     title: 'Are you selling something?',
     textWhite: false
@@ -62,15 +65,8 @@ export default class Jumbotron extends React.Component {
     });
   }
 
-  setBackgroundColor(index) {
-    switch (index) {
-      case 1:
-        return 'green-bg';
-      case 2:
-        return 'orange-bg';
-      default:
-        return 'default-bg';
-    }
+  setBackgroundColor(slide) {
+    return {"backgroundColor": slide.backgroundColor};
   }
 
   setCurrentIndex(index) {
@@ -103,7 +99,7 @@ export default class Jumbotron extends React.Component {
     let formattedSlides = this.formatSlides(currentIndex, fadeOut);
 
     return (
-      <section className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
+      <section className={`jumbotron-wrapper`} style={this.setBackgroundColor(slides[currentIndex])}>
         <div className="jumbotron-inner-wrapper">
           {
             formattedSlides[currentIndex]

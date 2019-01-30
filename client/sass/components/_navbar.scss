@@ -21,8 +21,6 @@ $navbar-inner-wrapper-padding: 40px;
   @include box-shadow(0px, $navbar-shadow-veritical, $navbar-shadow-blur, 0px, $navbar-shadow-color);
   height: $navbar-height-full; width: 100%;
   padding: $navbar-padding-dimension 0;
-  position: fixed;
-  top: 0;
   z-index: 1000;
 
   &.cosbytes-background {
