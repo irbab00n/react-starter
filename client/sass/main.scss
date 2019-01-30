@@ -8,19 +8,9 @@
 @import "base/shared";
 
 /* COMPONENTS SASS FILES */
-@import "components/blog/blog-side-track-categories";
-@import "components/blog/blog-side-track-most-recent";
-@import "components/blog/blog-side-track-tags";
-@import "components/blog-list-blank";
-@import "components/blog-list-item";
 @import "components/footer";
 @import "components/jumbotron";
 @import "components/navbar";
-@import "components/project-panel";
-@import "components/projects-list-item";
-@import "components/skill-carousel";
 
 /* VIEWS SASS FILES */
-@import "views/blog-page-layout";
 @import "views/main-page-layout";
-@import "views/projects-page-layout";

@@ -8,35 +8,35 @@ const slides = [
   {
     feature: (show) => (
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
-        <a href="https://github.com/irbab00n" target="_blank"><button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/github_logo.png"/></button></a>
-        <a href="https://www.linkedin.com/in/cosbyts/" target="_blank"><button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/linkedin_logo.png"/></button></a>
-        <a href="https://s3-us-west-1.amazonaws.com/cos-bytes.com/resume.pdf" target="_blank"><button className="large-font">Resume</button></a>
+        <a><button className="large-font">Button 1</button></a>
+        <a><button className="large-font">Button 2</button></a>
+        <a><button className="large-font">Button 3</button></a>
       </div>
     ),
-    subtitle: 'I like to build things',
-    title: 'My name is Thomas Cosby',
+    subtitle: 'Example sub-title',
+    title: 'Example Title',
     textWhite: true
   },
   {
     feature: (show) => (
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
-        <Link to="/projects"><button className="large-font">Projects</button></Link>
+        <a><button className="large-font">Action Button</button></a>
       </div>
     ),
-    subtitle: 'See what I\'ve been working on',
-    title: 'My Projects',
+    subtitle: 'Place your advertisement here!',
+    title: 'Are you selling something?',
     textWhite: false
   },
   {
     feature: (show) => (
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
-        <Link to="/blog"><button className="large-font">Blog</button></Link>
+        <a><button className="large-font">Action Button 2</button></a>
       </div>
     ),
-    subtitle: 'See what\'s been on my mind',
-    title: 'My blog',
+    subtitle: 'Place your advertisement here!',
+    title: 'Are you selling something?',
     textWhite: false
-  }
+  },
 ];
 
 export default class Jumbotron extends React.Component {

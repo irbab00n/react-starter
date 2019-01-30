@@ -6,18 +6,16 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const logoURL = 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/react_512x512.png';
 
     return (
 
-      <header className="navbar-wrapper cosbytes-background">
+      <header className="navbar-wrapper">
         <div className="navbar-inner-wrapper">
-          <div className="logo"><a href="/">COSBYTES</a></div>
+          <div className="logo"><img src={logoURL} /><a href="/">React Starter</a></div>
           <ul className="links">
             <li>
-              <a href="/projects">Projects</a>
-            </li>
-            <li>
-              <a href="/blog">Blog</a>
+              <a>Links</a>
             </li>
           </ul>
         </div>

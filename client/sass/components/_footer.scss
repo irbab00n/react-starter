@@ -18,7 +18,7 @@ $footer-inner-wrapper-padding: 40px;
 .footer-inner-wrapper {
   @include flex; @include align-center; @include justify-center;
   @include box-size-border-box;
-  color: white;
+  color: $blue-grey-800;
   font-size: 14px;
   height: 100%; width: 100%;
   padding: 0 $footer-inner-wrapper-padding;

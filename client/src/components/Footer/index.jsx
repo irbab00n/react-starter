@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
 
     return (
-      <footer className="footer-wrapper cosbytes-background">
+      <footer className="footer-wrapper">
         <div className="footer-inner-wrapper">
           2019 All Rights Reserved | Developed by Thomas Cosby
         </div>

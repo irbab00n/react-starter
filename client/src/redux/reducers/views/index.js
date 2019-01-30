@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import blog from './blog_reducer';
+// import example from './example_reducer';
 
 const reducers = combineReducers({
-  blog
+  /* Place imported Reducer modules here */
 });
 
 export default reducers;

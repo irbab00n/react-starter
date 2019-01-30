@@ -36,21 +36,35 @@ $navbar-inner-wrapper-padding: 40px;
   height: 100%; width: 100%;
   padding: 0 $navbar-inner-wrapper-padding;
 }
+
+.navbar-inner-wrapper > .logo {
+  @include flex; @include align-center;
+}
+.navbar-inner-wrapper > .logo > img {
+  @include transition(0.2s);
+  height: 36px; width: 36px;
+  margin-right: 10px;
+  opacity: 0.8;
+
+  &:hover {
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(50, 50, 50, 0.2));
+    filter: drop-shadow(1px 1px 1px rgba(50, 50, 50, 0.2));
+    opacity: 1;
+  }
+}
 .navbar-inner-wrapper > .logo, .navbar-inner-wrapper > .logo > a {
   @include transition(0.2s);
   cursor: pointer;
-  color: $blue-grey-100;
+  color: $blue-grey-600;
   font-size: 36px; font-weight: 900;
   text-decoration: none;
 
   &:hover {
-    text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);
-    color: $blue-grey-50;
+    color: $blue-grey-800;
   }
 
   &:active {
-    text-shadow: 2px 2px 3px rgba(25, 25, 25, 0.5);
-    color: $amber-500;
+    color: $cosbytes-blue;
   }
 }
 
@@ -68,18 +82,16 @@ $navbar-inner-wrapper-padding: 40px;
 .navbar-inner-wrapper > ul > li > a {
   @include transition(0.2s);
   cursor: pointer;
-  color: $blue-grey-100;
+  color: $blue-grey-600;
   font-size: 24px; font-weight: 600;
   text-decoration: none;
 
   &:hover {
-    text-shadow: 2px 2px 6px rgba(25, 25, 25, 0.5);
-    color: $blue-grey-50;
+    color: $blue-grey-800;
   }
 
   &:active {
-    text-shadow: 2px 2px 3px rgba(25, 25, 25, 0.5);
-    color: $amber-500;
+    color: $cosbytes-blue;
   }
 }
 

@@ -5,10 +5,14 @@ import ReactDOM from 'react-dom';
 /* Redux imports */
 import { applyMiddleware, createStore, compose } from 'redux';
 import { Provider, connect } from 'react-redux';
-/* Redux middleware */
+/* --- Redux middleware */
 import thunk from 'redux-thunk';
-/* Redux files */
+/* --- Redux files */
 import reducers from './redux/reducers';
+/** dispatchMappedActions info --
+ * Rather than create the 'mapDispatchToProps' variable on every single component you connect to Redux
+ * Move this into it's own module and import to any module you wish to connect to Redux
+ */
 import dispatchMappedActions from './redux/dispatchMappedActions';
 
 /* Components */

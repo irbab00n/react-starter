@@ -1,9 +1,6 @@
 # Cosbytes
 
-This Repo is the front-end application for cosbytes.com
-
-#### Dev link: http://dev.cosbytes.com
-#### Prod link: https://www.cosbytes.com
+This Repo is a starter Starter React application with Redux state management boilerplate
 
 ## How to run the application:
 
